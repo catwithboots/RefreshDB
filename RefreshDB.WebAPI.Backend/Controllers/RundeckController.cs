@@ -17,17 +17,15 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         {
             dynamic env = new EnvironmentsController();
             {
-
                 List<RefreshDB.Database.Framework.Environment> list = env.Get();
 
+                // Rename EF columns to Rundeck style
                 Func<RefreshDB.Database.Framework.Environment, JObject> objToJson =
                     o => new JObject(
                             new JProperty("name", o.name),
                             new JProperty("value", o.id));
 
-                string result = new JObject(new JArray(list.Select(objToJson))).ToString();
-
-                return Json(result);
+                return Json(new JArray(list.Select(objToJson)));
             }
         }
     }
