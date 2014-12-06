@@ -13,7 +13,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
 {
     public class RundeckController : ApiController
     {
-        public dynamic GetAllEnvironments()
+        public dynamic Get()
         {
             dynamic env = new EnvironmentsController();
             {
