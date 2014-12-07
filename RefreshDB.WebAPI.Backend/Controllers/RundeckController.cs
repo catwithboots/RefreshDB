@@ -52,15 +52,22 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         {
             dynamic dbs = new DatabasesController();
             {
-                List<Instance> list = dbs.GetDatabasesByInstance(id);
+                List<string> list = dbs.GetDatabasesByInstance(id);
+
+                string[][] newlist = list.Select(x => new string[] { x }).ToArray();
+
+                //string json = JsonConvert.SerializeObject(newlist);
+
 
                 // Rename EF columns to Rundeck style
-                Func<Instance, JObject> objToJson =
+                Func<string, JObject> objToJson =
                     o => new JObject(
-                            new JProperty("name", o.name),
-                            new JProperty("value", o.name));
+                            new JProperty("name", o),
+                            new JProperty("value", o));
 
                 return Json(new JArray(list.Select(objToJson)));
+
+                //return Json(json);
             }
         }
     }
