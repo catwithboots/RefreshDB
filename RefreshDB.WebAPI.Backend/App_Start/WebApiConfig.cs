@@ -38,6 +38,11 @@ namespace RefreshDB.WebAPI.Backend
                 routeTemplate: "api/rundeck/{id}",
                 defaults: new { controller = "rundeck", id = RouteParameter.Optional }
             );
+            config.Routes.MapHttpRoute(
+               name: "ActionApi",
+               routeTemplate: "api/{controller}/{action}/{id}",
+               defaults: new { id = RouteParameter.Optional }
+            );
         }
     }
 }
