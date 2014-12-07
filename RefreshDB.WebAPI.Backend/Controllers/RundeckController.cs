@@ -56,9 +56,6 @@ namespace RefreshDB.WebAPI.Backend.Controllers
 
                 string[][] newlist = list.Select(x => new string[] { x }).ToArray();
 
-                //string json = JsonConvert.SerializeObject(newlist);
-
-
                 // Rename EF columns to Rundeck style
                 Func<string, JObject> objToJson =
                     o => new JObject(
@@ -66,8 +63,6 @@ namespace RefreshDB.WebAPI.Backend.Controllers
                             new JProperty("value", o));
 
                 return Json(new JArray(list.Select(objToJson)));
-
-                //return Json(json);
             }
         }
     }
