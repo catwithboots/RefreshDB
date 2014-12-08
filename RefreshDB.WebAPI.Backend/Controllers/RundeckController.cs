@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using RefreshDB.Database.Framework;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections;
 
 namespace RefreshDB.WebAPI.Backend.Controllers
 {
@@ -65,7 +66,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         }
 
         // Return source savesetfile for a database
-        public dynamic GetSavesetPathByInstance(int id, string name)
+        public dynamic GetSourceSavesetPathByInstance(int id, string name)
         {
             dynamic inst = new InstancesController();
             {
@@ -88,7 +89,9 @@ namespace RefreshDB.WebAPI.Backend.Controllers
             {
                 Instance myinstance = inst.GetInstanceById(id);
 
-                //List<Instance> myinstancelist = myinstance.ToString().ToList();
+                // Add the Instance object to a new Instance list
+                List<Instance> list = new List<Instance>();
+                list.Add(myinstance);
 
                 // Rename EF columns to Rundeck style
                 Func<Instance, JObject> objToJson =
@@ -96,7 +99,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
                             new JProperty("name", o.destinationsavesetpath),
                             new JProperty("value", o.destinationsavesetpath));
 
-                return Json(new JArray(objToJson));
+                return Json(new JArray(list.Select(objToJson)));
             }
         }
     }
