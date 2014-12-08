@@ -20,5 +20,7 @@ namespace RefreshDB.Database.Framework
         public string SQLUsername { get; set; }
         public string SQLPassword { get; set; }
         public int environment_id { get; set; }
+        public string sourcesavesetpath { get; set; }
+        public string destinationsavesetpath { get; set; }
     }
 }

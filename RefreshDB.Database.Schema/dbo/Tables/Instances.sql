@@ -2,6 +2,8 @@
     [id]               INT           NOT NULL,
     [name]             VARCHAR (255) NOT NULL,
     [servername]           VARCHAR (100) NOT NULL,
+	[sourcesavesetpath]	VARCHAR (255) NULL,
+	[destinationsavesetpath]	VARCHAR (255) NULL,
 	[SQLUsername]	VARCHAR (255) NULL,
 	[SQLPassword]	VARCHAR (255) NULL,
     [environment_id]   INT           NOT NULL,

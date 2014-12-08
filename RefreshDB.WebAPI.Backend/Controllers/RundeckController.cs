@@ -54,8 +54,6 @@ namespace RefreshDB.WebAPI.Backend.Controllers
             {
                 List<string> list = dbs.GetDatabasesByInstance(id);
 
-                string[][] newlist = list.Select(x => new string[] { x }).ToArray();
-
                 // Rename EF columns to Rundeck style
                 Func<string, JObject> objToJson =
                     o => new JObject(
@@ -63,6 +61,42 @@ namespace RefreshDB.WebAPI.Backend.Controllers
                             new JProperty("value", o));
 
                 return Json(new JArray(list.Select(objToJson)));
+            }
+        }
+
+        // Return source savesetfile for a database
+        public dynamic GetSavesetPathByInstance(int id, string name)
+        {
+            dynamic inst = new InstancesController();
+            {
+                List<Instance> list = inst.GetInstanceByEnvironmentId(id);
+
+                // Rename EF columns to Rundeck style
+                Func<Instance, JObject> objToJson =
+                    o => new JObject(
+                            new JProperty("name", o.sourcesavesetpath + "\\SQLRefreshDB_" + name + ".BAK"),
+                            new JProperty("value", o.sourcesavesetpath + "\\SQLRefreshDB_" + name + ".BAK"));
+
+                return Json(new JArray(list.Select(objToJson)));
+            }
+        }
+
+        // Return source savesetfile for a database
+        public dynamic GetDestinationSavesetPathByInstance(int id)
+        {
+            dynamic inst = new InstancesController();
+            {
+                Instance myinstance = inst.GetInstanceById(id);
+
+                //List<Instance> myinstancelist = myinstance.ToString().ToList();
+
+                // Rename EF columns to Rundeck style
+                Func<Instance, JObject> objToJson =
+                    o => new JObject(
+                            new JProperty("name", o.destinationsavesetpath),
+                            new JProperty("value", o.destinationsavesetpath));
+
+                return Json(new JArray(objToJson));
             }
         }
     }

@@ -9,32 +9,34 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Nullable="false" Type="int" />
-          <Property Name="name" MaxLength="255" Type="varchar" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Instances">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Nullable="false" Type="int" />
-          <Property Name="name" Nullable="false" MaxLength="255" Type="varchar" />
-          <Property Name="servername" Nullable="false" MaxLength="100" Type="varchar" />
-          <Property Name="SQLUsername" MaxLength="255" Type="varchar" />
-          <Property Name="SQLPassword" MaxLength="255" Type="varchar" />
-          <Property Name="environment_id" Nullable="false" Type="int" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="servername" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="sourcesavesetpath" Type="varchar" MaxLength="255" />
+          <Property Name="destinationsavesetpath" Type="varchar" MaxLength="255" />
+          <Property Name="SQLUsername" Type="varchar" MaxLength="255" />
+          <Property Name="SQLPassword" Type="varchar" MaxLength="255" />
+          <Property Name="environment_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Scripts">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Nullable="false" Type="int" />
-          <Property Name="name" Nullable="false" MaxLength="100" Type="varchar" />
-          <Property Name="host" Nullable="false" MaxLength="100" Type="varchar" />
-          <Property Name="Location" Nullable="false" MaxLength="255" Type="varchar" />
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="host" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Location" Type="varchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <Association Name="FK_Instances_Environments_id">
-          <End Type="Self.Environments" Multiplicity="1" Role="Environments" />
-          <End Type="Self.Instances" Multiplicity="*" Role="Instances" />
+          <End Role="Environments" Type="Self.Environments" Multiplicity="1" />
+          <End Role="Instances" Type="Self.Instances" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Environments">
               <PropertyRef Name="id" />
@@ -49,8 +51,8 @@
           <EntitySet Name="Instances" EntityType="Self.Instances" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Scripts" EntityType="Self.Scripts" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Instances_Environments_id" Association="Self.FK_Instances_Environments_id">
-            <End EntitySet="Environments" Role="Environments" />
-            <End EntitySet="Instances" Role="Instances" />
+            <End Role="Environments" EntitySet="Environments" />
+            <End Role="Instances" EntitySet="Instances" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -74,6 +76,8 @@
           <Property Name="SQLUsername" MaxLength="255" FixedLength="false" Unicode="false" Type="String" />
           <Property Name="SQLPassword" MaxLength="255" FixedLength="false" Unicode="false" Type="String" />
           <Property Name="environment_id" Nullable="false" Type="Int32" />
+          <Property Name="sourcesavesetpath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="destinationsavesetpath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Script">
           <Key>
@@ -122,6 +126,8 @@
           <EntitySetMapping Name="Instances">
             <EntityTypeMapping TypeName="RefreshDBModel.Instance">
               <MappingFragment StoreEntitySet="Instances">
+                <ScalarProperty Name="destinationsavesetpath" ColumnName="destinationsavesetpath" />
+                <ScalarProperty Name="sourcesavesetpath" ColumnName="sourcesavesetpath" />
                 <ScalarProperty Name="SQLPassword" ColumnName="SQLPassword" />
                 <ScalarProperty Name="SQLUsername" ColumnName="SQLUsername" />
                 <ScalarProperty Name="servername" ColumnName="servername" />
