@@ -170,6 +170,7 @@
   <ItemGroup>
     <None Include="Properties\PublishProfiles\FileSystem.pubxml" />
     <None Include="Properties\PublishProfiles\FileSystemWINDMZ01.pubxml" />
+    <Content Include="Web.config.Example" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
