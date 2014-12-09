@@ -49,7 +49,7 @@ namespace RefreshDB.WebAPI.Backend
                 name: "RundeckMultiValue",
                 routeTemplate: "api/{controller}/{action}/{id}/{name}",
                 defaults: new { controller = "rundeck", id = RouteParameter.Optional,  name = RouteParameter.Optional},
-                constraints: new { id = @"^[0-9]+$", name = @"^[a-z]+$" }
+                constraints: new { id = @"^[0-9]+$" }
             );
             
             config.Routes.MapHttpRoute(
