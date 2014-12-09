@@ -9,6 +9,7 @@ using RefreshDB.Database.Framework;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections;
+using System.IO;
 
 namespace RefreshDB.WebAPI.Backend.Controllers
 {
@@ -101,6 +102,16 @@ namespace RefreshDB.WebAPI.Backend.Controllers
 
                 return Json(new JArray(list.Select(objToJson)));
             }
+        }
+
+        // Return True/False because it's a hassle in rundeck to do name/value pairs
+        public dynamic GetBoolean()
+        {
+            const string JSON = "{[{\"Name\":\"True\", \"Value\":\"1\"},{\"Name\":\"False\", \"Value\":\"0\"}]}";
+            var reader = new StringReader(JSON);
+            JContainer o = (JObject)JToken.ReadFrom(new JsonTextReader(reader));
+            //JArray x = (JArray)o["ArrayToManipulate"];
+            return Json(new JArray(o));
         }
     }
 }

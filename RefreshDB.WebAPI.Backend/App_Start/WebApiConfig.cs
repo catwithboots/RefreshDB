@@ -32,22 +32,34 @@ namespace RefreshDB.WebAPI.Backend
                 routeTemplate: "api/databases/{id}",
                 defaults: new { controller = "databases", id = RouteParameter.Optional }
             );
+            // Begin Rundeck routes
+            config.Routes.MapHttpRoute(
+                name: "RundeckGetBoolean",
+                routeTemplate: "api/rundeck/GetBoolean",
+                defaults: new { controller = "rundeck", action = "GetBoolean" }
+            );
 
             config.Routes.MapHttpRoute(
                 name: "Rundeck",
-                routeTemplate: "api/rundeck/{id}",
-                defaults: new { controller = "rundeck", id = RouteParameter.Optional }
+                routeTemplate: "api/rundeck",
+                defaults: new { controller = "rundeck", action = "Get" }
             );
+            
             config.Routes.MapHttpRoute(
                 name: "RundeckMultiValue",
                 routeTemplate: "api/{controller}/{action}/{id}/{name}",
-                defaults: new { controller = "rundeck", id = RouteParameter.Optional,  name = RouteParameter.Optional}
+                defaults: new { controller = "rundeck", id = RouteParameter.Optional,  name = RouteParameter.Optional},
+                constraints: new { id = @"^[0-9]+$", name = @"^[a-z]+$" }
             );
+            
             config.Routes.MapHttpRoute(
                name: "ActionApi",
                routeTemplate: "api/{controller}/{action}/{id}",
-               defaults: new { id = RouteParameter.Optional }
+               defaults: null,
+               constraints: new { id = @"^[0-9]+$" }
             );
+
+            // End Rundeck routes
         }
     }
 }

@@ -72,6 +72,8 @@
     <Build Include="Security\RoleMemberships.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="RefreshDB.Database.Schema.DEV.publish.xml" />
+    <None Include="RefreshDB.Database.Schema.DEV.publish.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>
