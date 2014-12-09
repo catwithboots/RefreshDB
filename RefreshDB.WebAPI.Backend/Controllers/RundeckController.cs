@@ -107,11 +107,9 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         // Return True/False because it's a hassle in rundeck to do name/value pairs
         public dynamic GetBoolean()
         {
-            const string JSON = "{[{\"Name\":\"True\", \"Value\":\"1\"},{\"Name\":\"False\", \"Value\":\"0\"}]}";
-            var reader = new StringReader(JSON);
-            JContainer o = (JObject)JToken.ReadFrom(new JsonTextReader(reader));
-            //JArray x = (JArray)o["ArrayToManipulate"];
-            return Json(new JArray(o));
+            string strJSON = "[{\"Name\":\"True\", \"Value\":\"1\"}, {\"Name\":\"False\", \"Value\":\"0\"}]";
+            JArray rows = JArray.Parse(strJSON);
+            return Json(rows);
         }
     }
 }
