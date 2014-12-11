@@ -25,7 +25,7 @@
     <Compile Include="RefreshDB.WebAPI.Backend.wxs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RefreshDB.WebAPI.Backend\RefreshDB.WebAPI.Backend.csproj">
+    <ProjectReference Include="..\RefreshDB.WebAPI.Backend\RefreshDB.WebAPI.Backend.csproj" Exclude="SourceDir\Web.config">
       <Name>RefreshDB.WebAPI.Backend</Name>
       <Project>{51fa62c0-76e8-406e-a7b0-40cc9c0204c2}</Project>
       <Private>True</Private>
@@ -35,6 +35,9 @@
       <RefTargetDir>INSTALLFOLDER</RefTargetDir>
       <WebProject>True</WebProject>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Filter.xslt" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <Target Name="BeforeBuild">
