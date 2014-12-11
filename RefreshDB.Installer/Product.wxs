@@ -12,6 +12,9 @@
       <ComponentRef Id="CopyWebConfig"/>
       <ComponentGroupRef Id="RefreshDB.WebAPI.Backend_Project"/>
     </Feature>
+
+    <Icon Id="sbpdemo.ico" SourceFile="InstallerFiles\sbpdemo.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="sbpdemo.ico" />
   </Product>
 
   <Fragment>
