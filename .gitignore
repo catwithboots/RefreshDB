@@ -190,3 +190,4 @@ ModelManifest.xml
 
 # Configuration files with sensistive information
 RefreshDB.WebAPI.Backend/Web.config
+Web.config
