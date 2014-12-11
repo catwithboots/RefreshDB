@@ -8,23 +8,27 @@
 
     <Feature Id="ProductFeature" Title="SQL Server Database Refresh" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
+      <ComponentGroupRef Id="RefreshDB.WebAPI.Backend_Project"/>
     </Feature>
   </Product>
 
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="ProgramFilesFolder">
-        <Directory Id="INSTALLFOLDER" Name="SQL Server Database Refresh" />
+      <Directory Id="INETPUB" Name="Inetpub" ComponentGuidGenerationSeed="6F6C211E-3CA1-4E87-A41C-D8BF4907D25D">
+        <Directory Id="INSTALLFOLDER" Name="RefreshDB" />
       </Directory>
     </Directory>
   </Fragment>
 
   <Fragment>
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <Component Id="ProductComponent" Guid="B3AABA1C-4947-4776-A557-2BDA3329F9FF">
+        <CreateFolder/>
       <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
       <!-- <Component Id="ProductComponent"> -->
       <!-- TODO: Insert files, registry keys, and other resources here. -->
       <!-- </Component> -->
+      </Component>
     </ComponentGroup>
   </Fragment>
 </Wix>
