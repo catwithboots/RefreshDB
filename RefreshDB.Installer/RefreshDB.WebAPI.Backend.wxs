@@ -8,12 +8,8 @@
             <Component Id="cmp3DE0E27CB4AD0EAD15733F20AB0760EF" Guid="*">
                 <File Id="filF804CBAD53A94E1BE2AB44FD5DF0AB63" KeyPath="yes" Source="SourceDir\packages.config" />
             </Component>
-            <Component Id="cmpCDB7F4EFDEF1E65C3B12BEBAD7E4D7EA" Guid="*">
-                <File Id="fil8994620207C22CA15AF75ACDD6420C79" KeyPath="yes" Source="SourceDir\Web.config" />
-            </Component>
-            <Component Id="cmp4DEDC4BD8B50809C9679DE179843E514" Guid="*">
-                <File Id="fil78FED1A4C49767B7ABB532406781EA1D" KeyPath="yes" Source="SourceDir\Web.config.Example" />
-            </Component>
+            
+            
             <Directory Id="dir7307A6085BD4ABD9B8955C093FD541F5" Name="bin">
                 <Component Id="cmp4795109627B83AD0BD4AE603B111DBF1" Guid="*">
                     <File Id="filEE905A33DF4BB70A125796A18623634B" KeyPath="yes" Source="SourceDir\bin\EntityFramework.dll" />
@@ -86,8 +82,8 @@
         <ComponentGroup Id="RefreshDB.WebAPI.Backend_Project">
             <ComponentRef Id="cmp6A4F9D28DF6F992FCE04768A605F3F6B" />
             <ComponentRef Id="cmp3DE0E27CB4AD0EAD15733F20AB0760EF" />
-            <ComponentRef Id="cmpCDB7F4EFDEF1E65C3B12BEBAD7E4D7EA" />
-            <ComponentRef Id="cmp4DEDC4BD8B50809C9679DE179843E514" />
+            
+            
             <ComponentRef Id="cmp4795109627B83AD0BD4AE603B111DBF1" />
             <ComponentRef Id="cmp7FAFACC5767528A7C01CB444DDF11157" />
             <ComponentRef Id="cmpDE273EC5A6ABB02DB8578BC4F2ABEBD3" />
