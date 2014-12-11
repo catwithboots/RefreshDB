@@ -162,9 +162,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PowershellScripts\RunSQLStatement.ps1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="PowershellScripts\RunSQLStatement.ps1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\FileSystem.pubxml" />
