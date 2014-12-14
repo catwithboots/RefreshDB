@@ -5,21 +5,12 @@
   <Fragment>
     <DirectoryRef Id="INSTALLFOLDER">
       <Component Id="SQLRefreshDBAppPool" Guid="" KeyPath="yes">
-        <util:User Id="SQLRefreshDBAppPoolUser"
-           CreateUser="no"
-           Name="[APPPOOL_USER]"
-           Password="[APPPOOL_PASS]"
-           Domain="[APPPOOL_DOMAIN]" />
-        <iis:WebAppPool Id="SQLRefreshDBAppPool"
-                        Name="[APPPOOL_NAME]"
-                        Identity="other"
-                        ManagedPipelineMode="Integrated"
-                        ManagedRuntimeVersion="v4.0"
-                          User="SQLRefreshDBAppPoolUser" />
+        <util:User Id="SQLRefreshDBAppPoolUser" CreateUser="no" Name="[APPPOOL_USER]" Password="[APPPOOL_PASS]" Domain="[APPPOOL_DOMAIN]" />
+        <iis:WebAppPool Id="SQLRefreshDBAppPool" Name="[APPPOOL_NAME]" Identity="other" ManagedPipelineMode="Integrated" ManagedRuntimeVersion="v4.0" User="SQLRefreshDBAppPoolUser" />
       </Component>
       <Component Id="SQLRefreshDBWebSite" Guid="" KeyPath="yes">
         <!-- Install to default web site -->
-        <iis:WebSite Id="SQLRefreshDBWebSite" Description='SQLRefreshDB WebApi' Directory='INSTALLFOLDER' AutoStart='yes' StartOnInstall='yes'>
+        <iis:WebSite Id="SQLRefreshDBWebSite" Description='SQLRefreshDB WebApi Test' Directory='INSTALLFOLDER' AutoStart='yes' StartOnInstall='yes'>
           <iis:WebAddress Id="AllUnassigned" Port="[WEB_PORT]" />
           <iis:WebApplication Id="SQLRefreshDBWebsiteApplication" Name="[WEBSITE_NAME]" WebAppPool="SQLRefreshDBAppPool"></iis:WebApplication>
         </iis:WebSite>
