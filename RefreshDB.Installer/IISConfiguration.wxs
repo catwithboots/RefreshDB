@@ -9,7 +9,7 @@
            CreateUser="no"
            Name="[APPPOOL_USER]"
            Password="[APPPOOL_PASS]"
-           Domain="." />
+           Domain="[APPPOOL_DOMAIN]" />
         <iis:WebAppPool Id="SQLRefreshDBAppPool"
                         Name="SQLRefreshDB"
                         Identity="other"
@@ -20,7 +20,7 @@
       <Component Id="SQLRefreshDBWebSite" Guid="" KeyPath="yes">
         <!-- Install to default web site -->
         <iis:WebSite Id="SQLRefreshDBWebSite" Description='SQLRefreshDB WebApi' Directory='INSTALLFOLDER' AutoStart='yes' StartOnInstall='yes'>
-          <iis:WebAddress Id="AllUnassigned" Port="8080" />
+          <iis:WebAddress Id="AllUnassigned" Port="[WEB_PORT]" />
           <iis:WebApplication Id="SQLRefreshDBWebsiteApplication" Name="[SQLRefreshDBWebSite][WEBSITE_ID]" WebAppPool="SQLRefreshDBAppPool"></iis:WebApplication>
         </iis:WebSite>
       </Component>
