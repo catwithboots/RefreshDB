@@ -10,9 +10,9 @@
       </Component>
       <Component Id="SQLRefreshDBWebSite" Guid="" KeyPath="yes">
         <!-- Install to default web site -->
-        <iis:WebSite Id="SQLRefreshDBWebSite" Description='SQLRefreshDB WebApi Test' Directory='INSTALLFOLDER' AutoStart='yes' StartOnInstall='yes'>
+        <iis:WebSite Id="SQLRefreshDBWebSite" Description='[WEBSITE_NAME]' Directory='INSTALLFOLDER' AutoStart='yes' StartOnInstall='yes'>
           <iis:WebAddress Id="AllUnassigned" Port="[WEB_PORT]" />
-          <iis:WebApplication Id="SQLRefreshDBWebsiteApplication" Name="[WEBSITE_NAME]" WebAppPool="SQLRefreshDBAppPool"></iis:WebApplication>
+          <iis:WebApplication Id="SQLRefreshDBWebsiteApplication" Name="SQLRefreshDB WebApi" WebAppPool="SQLRefreshDBAppPool"></iis:WebApplication>
         </iis:WebSite>
       </Component>
     </DirectoryRef>
