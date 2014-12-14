@@ -6,9 +6,6 @@
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate EmbedCab="yes" />
-
-    <!-- Default configuration values -->
-    <Property Id="INSTALLFOLDER">C:\inetpub\TestFolder</Property>
     
     <Feature Id="ProductFeature" Title="SQL Server Database Refresh - WebAPI" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
