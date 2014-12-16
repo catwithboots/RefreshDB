@@ -71,7 +71,11 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         {
             dynamic inst = new InstancesController();
             {
-                List<Instance> list = inst.GetInstanceByEnvironmentId(id);
+                Instance myinstance = inst.GetInstanceById(id);
+
+                // Add the Instance object to a new Instance list
+                List<Instance> list = new List<Instance>();
+                list.Add(myinstance);
 
                 // Rename EF columns to Rundeck style
                 Func<Instance, JObject> objToJson =
@@ -83,7 +87,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
             }
         }
 
-        // Return source savesetfile for a database
+        // Return destination saveset path for the backup
         public dynamic GetDestinationSavesetPathByInstance(int id)
         {
             dynamic inst = new InstancesController();
