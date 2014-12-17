@@ -22,9 +22,6 @@
                 <Component Id="cmpDE273EC5A6ABB02DB8578BC4F2ABEBD3" Guid="*">
                     <File Id="filBB5247D187E46075D53C64E74FCADCD1" KeyPath="yes" Source="SourceDir\bin\Microsoft.Web.Infrastructure.dll" />
                 </Component>
-                <Component Id="cmp8B7892C70FF082DA3B877BBFB45AB149" Guid="*">
-                    <File Id="fil975CD578CC6ADD1227E15C594B9D64E7" KeyPath="yes" Source="SourceDir\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll" />
-                </Component>
                 <Component Id="cmpBE9BB87ABB7F80C07AB897C66C4BFF19" Guid="*">
                     <File Id="fil7AB5AC371ADF176E37A0069DBDC4AC3A" KeyPath="yes" Source="SourceDir\bin\Newtonsoft.Json.dll" />
                 </Component>
@@ -84,7 +81,6 @@
             <ComponentRef Id="cmp4795109627B83AD0BD4AE603B111DBF1" />
             <ComponentRef Id="cmp7FAFACC5767528A7C01CB444DDF11157" />
             <ComponentRef Id="cmpDE273EC5A6ABB02DB8578BC4F2ABEBD3" />
-            <ComponentRef Id="cmp8B7892C70FF082DA3B877BBFB45AB149" />
             <ComponentRef Id="cmpBE9BB87ABB7F80C07AB897C66C4BFF19" />
             <ComponentRef Id="cmp8BBB80BFE1177B138AB923AFE9C83FE5" />
             <ComponentRef Id="cmpB486AA5FC6BDDFE17E5B304A15777293" />
