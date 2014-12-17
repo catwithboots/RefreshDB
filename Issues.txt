@@ -1,0 +1,15 @@
+Issues:
+Uninstall from IIS not working
+The Web.Example.config returns also in root location
+GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie
+
+ToDo:
+Automatic version numbering
+Automatic version numbering database projects
+Add version number to artifact
+Script to copy artifacts to artifact repo
+Chef cookbook for deploying dacpacs
+Create database role for service account(s)
+Create front end for administring data into sqlrefreshdb
+Create logging!!!!
+Find something simpler for web.config in github crap

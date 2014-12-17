@@ -54,7 +54,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         {
             dynamic dbs = new DatabasesController();
             {
-                List<string> list = dbs.GetDatabasesByInstance(id);
+                List<string> list = dbs.GetDbsByInstance(id);
 
                 // Rename EF columns to Rundeck style
                 Func<string, JObject> objToJson =
