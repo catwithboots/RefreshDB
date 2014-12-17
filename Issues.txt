@@ -6,7 +6,7 @@ GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals 
 ToDo:
 Automatic version numbering
 Automatic version numbering database projects
-Add version number to artifact
+Add version number to artifact name
 Script to copy artifacts to artifact repo
 Chef cookbook for deploying dacpacs
 Create database role for service account(s)

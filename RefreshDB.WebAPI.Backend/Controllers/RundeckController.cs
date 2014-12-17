@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.IO;
+using RefreshDB.WebAPI.Backend.Models;
 
 namespace RefreshDB.WebAPI.Backend.Controllers
 {
@@ -49,6 +50,27 @@ namespace RefreshDB.WebAPI.Backend.Controllers
             }
         }
 
+        // Return server for an instance
+        public dynamic GetServerByInstance(int id)
+        {
+            dynamic inst = new InstancesController();
+            {
+                Instance myinstance = inst.GetInstanceById(id);
+
+                // Add the Instance object to a new Instance list
+                List<Instance> list = new List<Instance>();
+                list.Add(myinstance);
+
+                // Rename EF columns to Rundeck style
+                Func<Instance, JObject> objToJson =
+                    o => new JObject(
+                            new JProperty("name", o.servername),
+                            new JProperty("value", o.servername));
+
+                return Json(new JArray(list.Select(objToJson)));
+            }
+        }
+
         // Return instances for an environment
         public dynamic GetDatabasesByInstance(int id)
         {
@@ -77,11 +99,14 @@ namespace RefreshDB.WebAPI.Backend.Controllers
                 List<Instance> list = new List<Instance>();
                 list.Add(myinstance);
 
+                // Remove the special characters from the database name, which should't be used any way!!!
+                string transformedname = Transformer.RemoveSpecialCharacters(name);
+
                 // Rename EF columns to Rundeck style
                 Func<Instance, JObject> objToJson =
                     o => new JObject(
-                            new JProperty("name", o.sourcesavesetpath + "\\SQLRefreshDB_" + name + ".BAK"),
-                            new JProperty("value", o.sourcesavesetpath + "\\SQLRefreshDB_" + name + ".BAK"));
+                            new JProperty("name", o.sourcesavesetpath + "\\SQLRefreshDB_" + transformedname + ".BAK"),
+                            new JProperty("value", o.sourcesavesetpath + "\\SQLRefreshDB_" + transformedname + ".BAK"));
 
                 return Json(new JArray(list.Select(objToJson)));
             }
