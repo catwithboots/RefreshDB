@@ -50,6 +50,27 @@ namespace RefreshDB.WebAPI.Backend.Controllers
             }
         }
 
+        // Return explicitely the instance name because rundeck can only pass option values to the workflow
+        public dynamic GetInstanceNameByInstance(int id)
+        {
+            dynamic inst = new InstancesController();
+            {
+                Instance myinstance = inst.GetInstanceById(id);
+
+                // Add the Instance object to a new Instance list
+                List<Instance> list = new List<Instance>();
+                list.Add(myinstance);
+
+                // Rename EF columns to Rundeck style
+                Func<Instance, JObject> objToJson =
+                    o => new JObject(
+                            new JProperty("name", o.name),
+                            new JProperty("value", o.name));
+
+                return Json(new JArray(list.Select(objToJson)));
+            }
+        }
+
         // Return server for an instance
         public dynamic GetServerByInstance(int id)
         {

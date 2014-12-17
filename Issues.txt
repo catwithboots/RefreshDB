@@ -1,7 +1,7 @@
 Issues:
 Uninstall from IIS not working
 The Web.Example.config returns also in root location
-GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie
+GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie -> Hoe waarde via url te verzenden indien spaties
 
 ToDo:
 Automatic version numbering
