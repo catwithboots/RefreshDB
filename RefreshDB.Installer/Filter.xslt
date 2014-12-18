@@ -8,7 +8,7 @@ xmlns:wix="http://schemas.microsoft.com/wix/2006/wi">
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
-  <xsl:key name="service-search" match="wix:Component[contains(wix:File/@Source, 'Web.config')]" use="@Id" />
+  <!--<xsl:key name="service-search" match="wix:Component[contains(wix:File/@Source, 'Web.config')]" use="@Id" />
   <xsl:template match="wix:Component[key('service-search', @Id)]" />
-  <xsl:template match="wix:ComponentRef[key('service-search', @Id)]" />
+  <xsl:template match="wix:ComponentRef[key('service-search', @Id)]" />-->
 </xsl:stylesheet>

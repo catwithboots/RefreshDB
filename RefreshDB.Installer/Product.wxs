@@ -9,8 +9,8 @@
     
     <Feature Id="ProductFeature" Title="SQL Server Database Refresh - WebAPI" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
-      <ComponentRef Id="WebConfigExample"/>
-      <ComponentRef Id="CopyWebConfig"/>
+      <!--<ComponentRef Id="WebConfigExample"/>
+      <ComponentRef Id="CopyWebConfig"/>-->
       <ComponentGroupRef Id="RefreshDB.WebAPI.Backend_Project"/>
       <ComponentGroupRef Id="SQLRefreshDBIisConfiguration"/>
     </Feature>
@@ -23,15 +23,15 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="INETPUB" Name="Inetpub" ComponentGuidGenerationSeed="6F6C211E-3CA1-4E87-A41C-D8BF4907D25D">
         <Directory Id="INSTALLFOLDER" Name="RefreshDB" />
-        <Component Id="WebConfigExample">
+        <!--<Component Id="WebConfigExample">
           <File Id="WebConfigExample" Name="Web.Example.config" KeyPath="yes" Source="SourceDir\Web.Example.config"></File>
-        </Component>
+        </Component>-->
       </Directory>
     </Directory>
     <DirectoryRef Id="TARGETDIR">
-      <Component Id="CopyWebConfig" Guid="823AD8D0-C03C-4974-813F-18404E96FA30">
+      <!--<Component Id="CopyWebConfig" Guid="823AD8D0-C03C-4974-813F-18404E96FA30">
         <CopyFile Id="CopyWebConfig" FileId="WebConfigExample" DestinationName="Web.config" DestinationDirectory="INSTALLFOLDER"/>
-      </Component>
+      </Component>-->
     </DirectoryRef>
   </Fragment>
 

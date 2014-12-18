@@ -8,7 +8,9 @@
             <Component Id="cmp3DE0E27CB4AD0EAD15733F20AB0760EF" Guid="*">
                 <File Id="filF804CBAD53A94E1BE2AB44FD5DF0AB63" KeyPath="yes" Source="SourceDir\packages.config" />
             </Component>
-            
+            <Component Id="cmpCDB7F4EFDEF1E65C3B12BEBAD7E4D7EA" Guid="*">
+                <File Id="fil8994620207C22CA15AF75ACDD6420C79" KeyPath="yes" Source="SourceDir\Web.config" />
+            </Component>
             <Component Id="cmp31E921C402DA35C5AFF0EF3D1D85923A" Guid="*">
                 <File Id="fil955044CB03752ED436C6456CFE5272A0" KeyPath="yes" Source="SourceDir\Web.Example.config" />
             </Component>
@@ -76,7 +78,7 @@
         <ComponentGroup Id="RefreshDB.WebAPI.Backend_Project">
             <ComponentRef Id="cmp6A4F9D28DF6F992FCE04768A605F3F6B" />
             <ComponentRef Id="cmp3DE0E27CB4AD0EAD15733F20AB0760EF" />
-            
+            <ComponentRef Id="cmpCDB7F4EFDEF1E65C3B12BEBAD7E4D7EA" />
             <ComponentRef Id="cmp31E921C402DA35C5AFF0EF3D1D85923A" />
             <ComponentRef Id="cmp4795109627B83AD0BD4AE603B111DBF1" />
             <ComponentRef Id="cmp7FAFACC5767528A7C01CB444DDF11157" />
