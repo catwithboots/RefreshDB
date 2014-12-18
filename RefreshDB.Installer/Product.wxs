@@ -17,6 +17,12 @@
 
     <Icon Id="sbpdemo.ico" SourceFile="InstallerFiles\sbpdemo.ico"/>
     <Property Id="ARPPRODUCTICON" Value="sbpdemo.ico" />
+
+    <Property Id="REGISTRYSETTINGS">
+      <RegistrySearch Id="WebAppName" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="WebAppName" Type="raw"></RegistrySearch>
+    </Property>
+    <SetProperty Id="WEBAPPNAME" Value="WebAppName" After="AppSearch">WEBAPPNAME=""</SetProperty>
+
   </Product>
 
   <Fragment>

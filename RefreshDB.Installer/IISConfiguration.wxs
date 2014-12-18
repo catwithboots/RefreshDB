@@ -4,6 +4,9 @@
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
   <Fragment>
     <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="RegistrySettingsWeb">
+        <RegistryValue Id="WebAppName" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="WebAppName" Type="string" Value="[WEBSITE_NAME]"></RegistryValue>
+      </Component>
       <Component Id="SQLRefreshDBAppPool" Guid="" KeyPath="yes">
         <util:User Id="SQLRefreshDBAppPoolUser" CreateUser="no" Name="[APPPOOL_USER]" Password="[APPPOOL_PASS]" Domain="[APPPOOL_DOMAIN]" />
         <iis:WebAppPool Id="SQLRefreshDBAppPool" Name="[APPPOOL_NAME]" Identity="other" ManagedPipelineMode="Integrated" ManagedRuntimeVersion="v4.0" User="SQLRefreshDBAppPoolUser" />
@@ -12,13 +15,14 @@
         <!-- Install to default web site -->
         <iis:WebSite Id="SQLRefreshDBWebSite" Description='[WEBSITE_NAME]' Directory='INSTALLFOLDER' AutoStart='yes' StartOnInstall='yes'>
           <iis:WebAddress Id="AllUnassigned" Port="[WEB_PORT]" />
-          <iis:WebApplication Id="SQLRefreshDBWebsiteApplication" Name="SQLRefreshDB WebApi" WebAppPool="SQLRefreshDBAppPool"></iis:WebApplication>
+          <iis:WebApplication Id="SQLRefreshDBWebsiteApplication" Name='[WEBSITE_NAME]' WebAppPool="SQLRefreshDBAppPool"></iis:WebApplication>
         </iis:WebSite>
       </Component>
     </DirectoryRef>
     <ComponentGroup Id="SQLRefreshDBIisConfiguration">
       <ComponentRef Id="SQLRefreshDBAppPool" />
       <ComponentRef Id="SQLRefreshDBWebSite" />
+      <ComponentRef Id="RegistrySettingsWeb"/>
     </ComponentGroup>
   </Fragment>
 </Wix>
