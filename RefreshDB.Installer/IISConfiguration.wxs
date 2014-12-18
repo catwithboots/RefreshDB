@@ -3,8 +3,8 @@
      xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension"
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
   <Fragment>
-    <Property Id="WEBSITE_NAME"/>
-    <Property Id="APPPOOL_NAME"/>
+    <Property Id="WEBSITE_NAME">[WEBSITE_NAME]</Property>
+    <Property Id="APPPOOL_NAME">[APPPOOL_NAME]</Property>
     <DirectoryRef Id="INSTALLFOLDER">
       <Component Id="RegistrySettingsWeb" Guid="A3FC5C61-5ADE-4618-819B-1D6EE40984C7" KeyPath="yes">
         <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="AppPool" Type="string" Value="[APPPOOL_NAME]"></RegistryValue>
