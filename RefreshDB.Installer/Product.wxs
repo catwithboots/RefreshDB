@@ -18,11 +18,18 @@
     <Icon Id="sbpdemo.ico" SourceFile="InstallerFiles\sbpdemo.ico"/>
     <Property Id="ARPPRODUCTICON" Value="sbpdemo.ico" />
 
+    <!--
+    <InstallExecuteSequence>
+      <RemoveExistingProducts Suppress="yes"></RemoveExistingProducts>
+    </InstallExecuteSequence>
+    
+    
     <Property Id="REGISTRYSETTINGS">
-      <RegistrySearch Id="WebAppName" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="WebAppName" Type="raw"></RegistrySearch>
+      <RegistrySearch Id="WebAppName" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VanProductConfig" Type="raw"></RegistrySearch>
     </Property>
-    <SetProperty Id="WEBAPPNAME" Value="WebAppName" After="AppSearch">WEBAPPNAME=""</SetProperty>
+    <SetProperty Id="WEBAPPNAME" Value="[WEBSITE_NAME]" After="AppSearch">WEBAPPNAME=""</SetProperty>
 
+    -->
   </Product>
 
   <Fragment>

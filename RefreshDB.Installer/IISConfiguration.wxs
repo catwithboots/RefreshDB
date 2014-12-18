@@ -4,8 +4,9 @@
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
   <Fragment>
     <DirectoryRef Id="INSTALLFOLDER">
-      <Component Id="RegistrySettingsWeb">
-        <RegistryValue Id="WebAppName" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="WebAppName" Type="string" Value="[WEBSITE_NAME]"></RegistryValue>
+      <Component Id="RegistrySettingsWeb" Guid="A3FC5C61-5ADE-4618-819B-1D6EE40984C7" KeyPath="yes">
+        <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="SQLRefreshDBWebsiteApplication" Type="string" Value="[WEBSITE_NAME]"></RegistryValue>
+        <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="SQLRefreshDBAppPool" Type="string" Value="[APPPOOL_NAME]"></RegistryValue>
       </Component>
       <Component Id="SQLRefreshDBAppPool" Guid="" KeyPath="yes">
         <util:User Id="SQLRefreshDBAppPoolUser" CreateUser="no" Name="[APPPOOL_USER]" Password="[APPPOOL_PASS]" Domain="[APPPOOL_DOMAIN]" />
