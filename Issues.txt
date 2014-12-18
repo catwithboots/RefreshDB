@@ -1,6 +1,5 @@
 Issues:
 Uninstall from IIS not working
-The Web.Example.config returns also in root location
 GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie -> Hoe waarde via url te verzenden indien spaties
 
 ToDo:
@@ -12,4 +11,4 @@ Chef cookbook for deploying dacpacs
 Create database role for service account(s)
 Create front end for administring data into sqlrefreshdb
 Create logging!!!!
-Find something simpler for web.config in github crap
+Installer to create a registry setting with name and version number (for uninstall and idempotency with chef)
