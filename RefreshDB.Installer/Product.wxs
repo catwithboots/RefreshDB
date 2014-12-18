@@ -16,10 +16,6 @@
     <Icon Id="sbpdemo.ico" SourceFile="InstallerFiles\sbpdemo.ico"/>
     <Property Id="ARPPRODUCTICON" Value="sbpdemo.ico" />
 
-    <InstallExecuteSequence>
-      <RemoveExistingProducts Suppress="yes"></RemoveExistingProducts>
-    </InstallExecuteSequence>
-    
   </Product>
 
   <Fragment>
