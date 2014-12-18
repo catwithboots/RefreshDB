@@ -11,8 +11,8 @@
       <Component Id="SQLRefreshDBAppPool" Guid="EDE7D8E5-83E2-4EA4-8C8C-808C4B49FA29" KeyPath="yes">
         <util:User Id="SQLRefreshDBAppPoolUser" CreateUser="no" Name="[APPPOOL_USER]" Password="[APPPOOL_PASS]" Domain="[APPPOOL_DOMAIN]" />
         <iis:WebAppPool Id="SQLRefreshDBAppPool" Name="[APPPOOL_NAME]" Identity="other" ManagedPipelineMode="Integrated" ManagedRuntimeVersion="v4.0" User="SQLRefreshDBAppPoolUser" />
-      </Component>
-      <Component Id="SQLRefreshDBWebSite" Guid="990E20AF-A135-47FC-B178-39A01FB865D0" KeyPath="yes">
+      <!--</Component>
+      <Component Id="SQLRefreshDBWebSite" Guid="990E20AF-A135-47FC-B178-39A01FB865D0" KeyPath="yes">-->
         <!-- Install to default web site -->
         <iis:WebSite Id="SQLRefreshDBWebSite" Description='[WEBSITE_NAME]' Directory='INSTALLFOLDER' AutoStart='yes' StartOnInstall='yes'>
           <iis:WebAddress Id="AllUnassigned" Port="[WEB_PORT]" />
@@ -22,7 +22,7 @@
     </DirectoryRef>
       <ComponentGroup Id="SQLRefreshDBIisConfiguration">
         <ComponentRef Id="SQLRefreshDBAppPool" />
-        <ComponentRef Id="SQLRefreshDBWebSite" />
+        <!--<ComponentRef Id="SQLRefreshDBWebSite" />-->
         <ComponentRef Id="RegistrySettingsWeb"/>
       </ComponentGroup>
   </Fragment>
