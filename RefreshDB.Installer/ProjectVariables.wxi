@@ -4,7 +4,7 @@
   <?ifdef env.SQLREFRESHDB_VERSION?>
   <?define VersionNumber = "$(env.SQLREFRESHDB_VERSION)" ?>
   <?else?>
-  <?define VersionNumber = "9.9.9.9" ?>
+  <?define VersionNumber = "99.99.99.99" ?>
   <?endif?>
   <!-- UpgradeCode -->
   <?define UpgradeCode="4745b535-0c62-443f-8503-bfce2e7ce9db" ?>

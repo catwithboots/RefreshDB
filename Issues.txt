@@ -12,7 +12,8 @@ Chef cookbook for deploying dacpacs
 Create database role for service account(s)
 Create front end for administring data into sqlrefreshdb
 Create logging!!!!
-
+Figure out stuff with debug|release
+Check wix heat with 64 bit
 
 
 Researched:
@@ -28,6 +29,8 @@ Automatic version numbering VS Solution with Jenkins and Wix
 		<?define VersionNumber = "9.9.9.9" ?>
 		<?endif?>
 
+Automatic version numbering all VS Solution items (dll's etc) with Jenkins
+
 Uninstall webapplication with Wix when using variable names of the sites and application pools
 	-> Create a property for the variable names with a registry search value: 
 		<Property Id="APPPOOL_NAME">
@@ -39,3 +42,4 @@ Uninstall webapplication with Wix when using variable names of the sites and app
 		<RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="AppPool" Type="string" Value="[APPPOOL_NAME]"></RegistryValue>
 	-> Create the application pool/site with a reference to the registry setting:
 		<iis:WebAppPool Id="SQLRefreshDBAppPool" Name="[APPPOOL_NAME]" Identity="other" ManagedPipelineMode="Integrated" ManagedRuntimeVersion="v4.0" User="SQLRefreshDBAppPoolUser" />
+

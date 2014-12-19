@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefreshDB.WebAPI.Backend", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.SolutionItems", "0.SolutionItems", "{06EE6D37-ED37-4061-B146-A25A832D8A23}"
 	ProjectSection(SolutionItems) = preProject
+		ApplyVersionToAssemblies.ps1 = ApplyVersionToAssemblies.ps1
+		DacVersionFromAssembly.targets = DacVersionFromAssembly.targets
 		Issues.txt = Issues.txt
 		SolutionInfo.cs = SolutionInfo.cs
 	EndProjectSection
