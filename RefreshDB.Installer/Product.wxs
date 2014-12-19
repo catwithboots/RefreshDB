@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
-  <Product Id="*" Name="SQL Server Database Refresh - WebAPI" Language="1033" Version="0.0.0.1" Manufacturer="Schuberg Philis" UpgradeCode="4745b535-0c62-443f-8503-bfce2e7ce9db">
+
+  <?define VersionNumber = "$(env.SQLREFRESHDB_VERSION)" ?>
+  
+  <Product Id="*" Name="SQL Server Database Refresh - WebAPI" Language="1033" Version="$(var.VersionNumber)" Manufacturer="Schuberg Philis" UpgradeCode="4745b535-0c62-443f-8503-bfce2e7ce9db">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
@@ -16,6 +19,10 @@
     <Icon Id="sbpdemo.ico" SourceFile="InstallerFiles\sbpdemo.ico"/>
     <Property Id="ARPPRODUCTICON" Value="sbpdemo.ico" />
 
+    <Property Id="SQLREFRESHDBVERSION">
+      <RegistrySearch Id="VersionNumber" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VersionNumber" Type="raw"></RegistrySearch>
+    </Property>
+    <SetProperty Id="SQLREFRESHDBVERSION" Value="VersionNumber" After="AppSearch">VersionNumber=""</SetProperty>
   </Product>
 
   <Fragment>
@@ -32,6 +39,7 @@
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="ProductComponent" Guid="B3AABA1C-4947-4776-A557-2BDA3329F9FF">
         <CreateFolder/>
+        <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VersionNumber" Type="string" Value="0.0.0.1"></RegistryValue>
       <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
       <!-- <Component Id="ProductComponent"> -->
       <!-- TODO: Insert files, registry keys, and other resources here. -->
