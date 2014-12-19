@@ -3,9 +3,9 @@
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
   <!-- Include variable wxi -->
-  <?include $(sys.CURRENTDIR)ProjectVariableswxi.wxi ?>
+  <?include $(sys.CURRENTDIR)ProjectVariables.wxi ?>
   
-  <Product Id="*" Name="SQL Server Database Refresh - WebAPI" Language="1033" Version="$(var.VersionNumber)" Manufacturer="Schuberg Philis" UpgradeCode="4745b535-0c62-443f-8503-bfce2e7ce9db">
+  <Product Id="*" Name="!(loc.ProductName)" Language="!(loc.LANG)" Version="$(var.VersionNumber)" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />

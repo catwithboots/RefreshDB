@@ -21,7 +21,12 @@ Automatic version numbering VS Solution with Jenkins and Wix
 	-> Configure the plugin within the Jenkins project
 	-> Define the environment variable in Wix <?define VersionNumber = "$(env.SQLREFRESHDB_VERSION)" ?>
 	-> Call the $(var.VersionNumber) within the rest of Wix
-	-> Local build will fail because the environment variable is set at the build server
+	-> To prevent local build failures because the environment variable sqlrefreshdb_version does not exists:
+		<?ifdef env.SQLREFRESHDB_VERSION?>
+		<?define VersionNumber = "$(env.SQLREFRESHDB_VERSION)" ?>
+		<?else?>
+		<?define VersionNumber = "9.9.9.9" ?>
+		<?endif?>
 
 Uninstall webapplication with Wix when using variable names of the sites and application pools
 	-> Create a property for the variable names with a registry search value: 

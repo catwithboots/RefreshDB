@@ -40,7 +40,7 @@
   <ItemGroup>
     <Content Include="Filter.xslt" />
     <Content Include="InstallerFiles\sbpdemo.ico" />
-    <Content Include="ProjectVariableswxi.wxi" />
+    <Content Include="ProjectVariables.wxi" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InstallerFiles" />
@@ -54,6 +54,9 @@
       <HintPath>$(WixExtDir)\WixIIsExtension.dll</HintPath>
       <Name>WixIIsExtension</Name>
     </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="en_US.wxl" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <Target Name="BeforeBuild">
