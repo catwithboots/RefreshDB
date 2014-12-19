@@ -118,9 +118,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SolutionInfo.cs">
-      <Link>Properties\SolutionInfo.cs</Link>
-    </Compile>
     <Compile Include="Controllers\DatabasesController.cs" />
     <Compile Include="Controllers\EnvironmentsController.cs" />
     <Compile Include="Controllers\InstancesController.cs" />
