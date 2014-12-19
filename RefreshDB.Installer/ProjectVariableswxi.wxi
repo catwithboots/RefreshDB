@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- Automatic version numbering on build server and static version for local build -->
+  <?ifdef env.SQLREFRESHDB_VERSION?>
+  <?define VersionNumber = "$(env.SQLREFRESHDB_VERSION)" ?>
+  <?else?>
+  <?define VersionNumber = "9.9.9.9" ?>
+  <?endif?>
+</Include>

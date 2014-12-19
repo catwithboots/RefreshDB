@@ -3,7 +3,7 @@
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
   <!-- Include variable wxi -->
-  <?include ProjectVariableswxi.wxi ?>
+  <?include $(sys.CURRENTDIR)ProjectVariableswxi.wxi ?>
   
   <Product Id="*" Name="SQL Server Database Refresh - WebAPI" Language="1033" Version="$(var.VersionNumber)" Manufacturer="Schuberg Philis" UpgradeCode="4745b535-0c62-443f-8503-bfce2e7ce9db">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
