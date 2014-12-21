@@ -4,7 +4,6 @@ Make Web.config database server variable and editable in Wix
 
 
 ToDo:
-Automatic version numbering database projects
 Add version number to artifact name
 Script to copy artifacts to artifact repo
 Chef cookbook for deploying dacpacs
@@ -17,6 +16,9 @@ Make refreshdb in C# without using psremote
 
 
 Researched:
+Automatic version numbering database projects
+	-> https://social.msdn.microsoft.com/Forums/sqlserver/en-US/e0c93a55-d8bd-4a32-89d9-f46013fc1235/automatic-version-increment-on-datatier-applications?forum=ssdt
+
 Automatic version numbering VS Solution with Jenkins and Wix
 	-> Install the version number plugin
 	-> Configure the plugin within the Jenkins project
@@ -26,7 +28,7 @@ Automatic version numbering VS Solution with Jenkins and Wix
 		<?ifdef env.SQLREFRESHDB_VERSION?>
 		<?define VersionNumber = "$(env.SQLREFRESHDB_VERSION)" ?>
 		<?else?>
-		<?define VersionNumber = "9.9.9.9" ?>
+		<?define VersionNumber = "99.99.99.99" ?>
 		<?endif?>
 
 Automatic version numbering all VS Solution items (dll's) with Jenkins
