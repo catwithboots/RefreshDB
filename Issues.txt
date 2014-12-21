@@ -14,6 +14,7 @@ Create front end for administring data into sqlrefreshdb
 Create logging!!!!
 Figure out stuff with debug|release
 Check wix heat with 64 bit
+Make refreshdb in C# without using psremote
 
 
 Researched:

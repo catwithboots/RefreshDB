@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SolutionsItems\Properties\SolutionInfo.cs">
+      <Link>Properties\SolutionInfo.cs</Link>
+    </Compile>
     <Compile Include="DatabaseActionRepository.cs" />
     <Compile Include="Environment.cs">
       <DependentUpon>RefreshDBModel.tt</DependentUpon>
