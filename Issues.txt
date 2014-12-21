@@ -31,6 +31,7 @@ Automatic version numbering VS Solution with Jenkins and Wix
 		<?endif?>
 
 Automatic version numbering all VS Solution items (dll's etc) with Jenkins
+	-> Install the change assembly version plugin
 
 Uninstall webapplication with Wix when using variable names of the sites and application pools
 	-> Create a property for the variable names with a registry search value: 
