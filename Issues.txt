@@ -4,7 +4,6 @@ Make Web.config database server variable and editable in Wix
 
 
 ToDo:
-Automatic version numbering across whole solution including every output file
 Automatic version numbering database projects
 Add version number to artifact name
 Script to copy artifacts to artifact repo
@@ -30,8 +29,13 @@ Automatic version numbering VS Solution with Jenkins and Wix
 		<?define VersionNumber = "9.9.9.9" ?>
 		<?endif?>
 
-Automatic version numbering all VS Solution items (dll's etc) with Jenkins
-	-> Install the change assembly version plugin
+Automatic version numbering all VS Solution items (dll's) with Jenkins
+	-> Install the change assembly version plugin (there's a bug for windows systems -> https://issues.jenkins-ci.org/browse/JENKINS-25476?page=com.atlassian.jira.plugin.system.issuetabpanels:all-tabpanel)
+	-> If bug is fixed, you can use the plugin as a prestep of your msbuild
+	-> Add a powershell script to your solution called ApplyVersionToAssemblies.ps1 (it's a fork from the ps1 in codeplex for tfs builds)
+	-> It will lookup the environment variable for the version and apply it to each assemblyinfo.* file
+	-> Add this as a powershell build (pre)step using the workspace variable.
+	-> Start your build
 
 Uninstall webapplication with Wix when using variable names of the sites and application pools
 	-> Create a property for the variable names with a registry search value: 
