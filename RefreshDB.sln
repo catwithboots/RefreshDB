@@ -22,6 +22,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefreshDB.WebAPI.Backend", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.SolutionItems", "0.SolutionItems", "{06EE6D37-ED37-4061-B146-A25A832D8A23}"
 	ProjectSection(SolutionItems) = preProject
+		SolutionsItems\ApplyVersionToAssemblies.ps1 = SolutionsItems\ApplyVersionToAssemblies.ps1
 		DacVersionFromAssembly.targets = DacVersionFromAssembly.targets
 		Issues.txt = Issues.txt
 	EndProjectSection
@@ -29,8 +30,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.RefreshDB.Installer", "5.RefreshDB.Installer", "{0E9C5971-EF76-4BA9-A294-2118DD318E41}"
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "RefreshDB.Installer", "RefreshDB.Installer\RefreshDB.Installer.wixproj", "{7A818DA8-5765-4CF5-82CF-C3C425925B2A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionsItems", "SolutionsItems\SolutionsItems.csproj", "{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,16 +85,6 @@ Global
 		{7A818DA8-5765-4CF5-82CF-C3C425925B2A}.Release|Mixed Platforms.Build.0 = Release|x86
 		{7A818DA8-5765-4CF5-82CF-C3C425925B2A}.Release|x86.ActiveCfg = Release|x86
 		{7A818DA8-5765-4CF5-82CF-C3C425925B2A}.Release|x86.Build.0 = Release|x86
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Release|Any CPU.Build.0 = Release|Any CPU
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +94,5 @@ Global
 		{51E5E69D-87A2-4B6C-AF54-4D48CA0DC37F} = {05F01498-8573-4C53-90FB-D539DE79FEA4}
 		{51FA62C0-76E8-406E-A7B0-40CC9C0204C2} = {185E4753-CF6C-4FFE-9A02-7F43174FD6D3}
 		{7A818DA8-5765-4CF5-82CF-C3C425925B2A} = {0E9C5971-EF76-4BA9-A294-2118DD318E41}
-		{37AE5823-FF25-4FE1-9ABF-8B808B0AEE77} = {06EE6D37-ED37-4061-B146-A25A832D8A23}
 	EndGlobalSection
 EndGlobal
