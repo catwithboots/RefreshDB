@@ -49,7 +49,7 @@
                         Action="setValue"
                         Permanent="yes"
                         File="[INSTALLFOLDER]Web.config"
-                        ElementPath="/configuration/connectionStrings/add[\[]@name='!RefreshDBEntities'[\]]"
+                        ElementPath="/configuration/connectionStrings/add[\[]@name='RefreshDBEntities'[\]]"
                         Name="connectionString"
                         Value="metadata=res://*/RefreshDBModel.csdl|res://*/RefreshDBModel.ssdl|res://*/RefreshDBModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=[DATABASESERVER];Initial Catalog=[DATABASENAME];Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;"
                         SelectionLanguage="XPath"
