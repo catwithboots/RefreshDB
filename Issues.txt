@@ -16,6 +16,10 @@ Make refreshdb in C# without using psremote
 
 
 Researched:
+
+Set Web.config variables via the Wix installer:
+	->
+
 Automatic version numbering database projects
 	-> https://social.msdn.microsoft.com/Forums/sqlserver/en-US/e0c93a55-d8bd-4a32-89d9-f46013fc1235/automatic-version-increment-on-datatier-applications?forum=ssdt
 

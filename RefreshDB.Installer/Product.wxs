@@ -4,13 +4,13 @@
 
   <!-- Include variable wxi -->
   <?include $(sys.CURRENTDIR)ProjectVariables.wxi ?>
-  
+
   <Product Id="*" Name="!(loc.ProductName)" Language="!(loc.LANG)" Version="$(var.VersionNumber)" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate EmbedCab="yes" />
-    
+
     <Feature Id="ProductFeature" Title="SQL Server Database Refresh - WebAPI" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentGroupRef Id="RefreshDB.WebAPI.Backend_Project"/>
@@ -24,6 +24,7 @@
       <RegistrySearch Id="VersionNumber" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VersionNumber" Type="raw"></RegistrySearch>
     </Property>
     <SetProperty Id="SQLREFRESHDBVERSION" Value="VersionNumber" After="AppSearch">VersionNumber=""</SetProperty>
+
   </Product>
 
   <Fragment>
@@ -41,10 +42,17 @@
       <Component Id="ProductComponent" Guid="B3AABA1C-4947-4776-A557-2BDA3329F9FF">
         <CreateFolder/>
         <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VersionNumber" Type="string" Value="$(var.VersionNumber)"></RegistryValue>
-      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-      <!-- <Component Id="ProductComponent"> -->
-      <!-- TODO: Insert files, registry keys, and other resources here. -->
-      <!-- </Component> -->
+      </Component>
+      <Component Id="Web.config" Guid="CAF588D1-F1A2-405B-8860-6FC9247EDE29">
+        <util:XmlFile Id="ModifyConnectionString"
+                        Action="setValue"
+                        Permanent="yes"
+                        File="[INSTALLFOLDER]Web.config"
+                        ElementPath="/configuration/connectionStrings/add[\[]@name='!RefreshDBEntities'[\]]"
+                        Name="connectionString"
+                        Value="metadata=res://*/RefreshDBModel.csdl|res://*/RefreshDBModel.ssdl|res://*/RefreshDBModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=[DATABASESERVER];Initial Catalog=[DATABASENAME];Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;"
+                        SelectionLanguage="XPath"
+                        Sequence="1"/>
       </Component>
     </ComponentGroup>
   </Fragment>
