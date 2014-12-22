@@ -44,6 +44,7 @@
         <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VersionNumber" Type="string" Value="$(var.VersionNumber)"></RegistryValue>
       </Component>
       <Component Id="Web.config" Guid="CAF588D1-F1A2-405B-8860-6FC9247EDE29">
+        <CreateFolder/>
         <util:XmlFile Id="ModifyConnectionString"
                         Action="setValue"
                         Permanent="yes"
