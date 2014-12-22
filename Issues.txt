@@ -1,7 +1,5 @@
 Issues:
 GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie -> Hoe waarde via url te verzenden indien spaties
-Make Web.config database server variable and editable in Wix
-
 
 ToDo:
 Add version number to artifact name
@@ -17,8 +15,37 @@ Make refreshdb in C# without using psremote
 
 Researched:
 
+Git Hook requires newer version of git than is available in centos yum repository:
+	-> wget https://www.kernel.org/pub/software/scm/git/git-2.2.1.tar.gz
+	-> tar xvzf git-2.2.1.tar.gz
+	-> cd git-2.2.1.tar
+	-> yum install libcurl-devel, gcc, zlib-devel
+	-> make configure
+	-> ./configure --prefix=/usr
+	-> make all
+	-> make install install-doc install-html
+
+Add software version number in registry:
+	-> Add the following to your wxs:
+		<Property Id="SQLREFRESHDBVERSION">
+			<RegistrySearch Id="VersionNumber" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VersionNumber" Type="raw"></RegistrySearch>
+		</Property>
+    <SetProperty Id="SQLREFRESHDBVERSION" Value="VersionNumber" After="AppSearch">VersionNumber=""</SetProperty>
+
 Set Web.config variables via the Wix installer:
-	->
+	-> Add the following to your wxs:
+		<Component Id="Web.config" Guid="CAF588D1-F1A2-405B-8860-6FC9247EDE29">
+        <CreateFolder/>
+        <util:XmlFile Id="ModifyConnectionString"
+                        Action="setValue"
+                        Permanent="yes"
+                        File="[INSTALLFOLDER]Web.config"
+                        ElementPath="/configuration/connectionStrings/add[\[]@name='RefreshDBEntities'[\]]"
+                        Name="connectionString"
+                        Value="metadata=res://*/RefreshDBModel.csdl|res://*/RefreshDBModel.ssdl|res://*/RefreshDBModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=[DATABASESERVER];Initial Catalog=[DATABASENAME];Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;"
+                        SelectionLanguage="XPath"
+                        Sequence="1"/>
+      </Component>
 
 Automatic version numbering database projects
 	-> https://social.msdn.microsoft.com/Forums/sqlserver/en-US/e0c93a55-d8bd-4a32-89d9-f46013fc1235/automatic-version-increment-on-datatier-applications?forum=ssdt
