@@ -3,7 +3,7 @@
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
 
   <!-- Include variable wxi -->
-  <?include $(sys.CURRENTDIR)ProjectVariables.wxi ?>
+  <?include $(sys.CURRENTDIR)\Variables\ProjectVariables.wxi ?>
 
   <Product Id="*" Name="!(loc.ProductName) v$(var.VersionNumber)" Language="!(loc.LANG)" Version="$(var.VersionNumber)" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
@@ -17,10 +17,8 @@
       <ComponentGroupRef Id="SQLRefreshDBIisConfiguration"/>
     </Feature>
 
-    <Icon Id="sbpdemo.ico" SourceFile="InstallerFiles\sbpdemo.ico"/>
+    <Icon Id="sbpdemo.ico" SourceFile="Images\sbpdemo.ico"/>
     <Property Id="ARPPRODUCTICON" Value="sbpdemo.ico" />
-
-    <Property Id="SQLREFRESHDBVERSION" />
 
     <!-- Include a user interface -->
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"/>

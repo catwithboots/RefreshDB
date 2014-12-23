@@ -21,12 +21,12 @@
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CustomApplicationSettingsDlg.wxs" />
-    <Compile Include="CustomInstallDirDlg.wxs" />
-    <Compile Include="CustomWixUI_InstallDir.wxs" />
     <Compile Include="IISConfiguration.wxs" />
     <Compile Include="Product.wxs" />
     <Compile Include="RefreshDB.WebAPI.Backend.wxs" />
+    <Compile Include="UserInterface\CustomApplicationSettingsDlg.wxs" />
+    <Compile Include="UserInterface\CustomInstallDirDlg.wxs" />
+    <Compile Include="UserInterface\CustomWixUI_InstallDir.wxs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RefreshDB.WebAPI.Backend\RefreshDB.WebAPI.Backend.csproj">
@@ -41,25 +41,26 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Filter.xslt" />
-    <Content Include="InstallerFiles\Banner.bmp" />
-    <Content Include="InstallerFiles\Complete.ico" />
-    <Content Include="InstallerFiles\Custom.ico" />
-    <Content Include="InstallerFiles\Dialog.bmp" />
-    <Content Include="InstallerFiles\Exclam.ico" />
-    <Content Include="InstallerFiles\Info.ico" />
-    <Content Include="InstallerFiles\License.rtf" />
-    <Content Include="InstallerFiles\New.ico" />
-    <Content Include="InstallerFiles\Remove.ico" />
-    <Content Include="InstallerFiles\Repair.ico" />
-    <Content Include="InstallerFiles\sbpdemo.ico" />
-    <Content Include="InstallerFiles\Typical.ico" />
-    <Content Include="InstallerFiles\Up.ico" />
-    <Content Include="ProjectVariables.wxi" />
+    <Content Include="Filters\Filter.xslt" />
+    <Content Include="Images\Banner.bmp" />
+    <Content Include="Images\Complete.ico" />
+    <Content Include="Images\Custom.ico" />
+    <Content Include="Images\Dialog.bmp" />
+    <Content Include="Images\Exclam.ico" />
+    <Content Include="Images\Info.ico" />
+    <Content Include="Images\License.rtf" />
+    <Content Include="Images\New.ico" />
+    <Content Include="Images\Remove.ico" />
+    <Content Include="Images\Repair.ico" />
+    <Content Include="Images\sbpdemo.ico" />
+    <Content Include="Images\Typical.ico" />
+    <Content Include="Images\Up.ico" />
+    <Content Include="Variables\ProjectVariables.wxi" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="InstallerFiles" />
+    <Folder Include="Images" />
     <Folder Include="Localization" />
+    <Folder Include="Filters" />
     <Folder Include="Variables" />
     <Folder Include="Parameters" />
     <Folder Include="UserInterface" />
@@ -79,7 +80,7 @@
     </WixExtension>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="en_US.wxl" />
+    <EmbeddedResource Include="Localization\en_US.wxl" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <Target Name="BeforeBuild">
@@ -87,6 +88,6 @@
     <ItemGroup>
       <LinkerBindInputPaths Include="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" />
     </ItemGroup>
-    <HeatDirectory OutputFile="%(ProjectReference.Filename).wxs" Directory="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="%(ProjectReference.Filename)_Project" AutogenerateGuids="true" SuppressCom="true" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" ToolPath="$(WixToolPath)" Condition="'%(ProjectReference.WebProject)'=='True'" Transforms="Filter.xslt" />
+    <HeatDirectory OutputFile="%(ProjectReference.Filename).wxs" Directory="%(ProjectReference.RootDir)%(ProjectReference.Directory)obj\$(Configuration)\Package\PackageTmp\" DirectoryRefId="INSTALLFOLDER" ComponentGroupName="%(ProjectReference.Filename)_Project" AutogenerateGuids="true" SuppressCom="true" SuppressFragments="true" SuppressRegistry="true" SuppressRootDirectory="true" ToolPath="$(WixToolPath)" Condition="'%(ProjectReference.WebProject)'=='True'" Transforms="Filters\Filter.xslt" />
   </Target>
 </Project>
