@@ -27,6 +27,10 @@ Patch dialog sequence:
 
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Fragment>
+    <!-- Custom Images for the installer-->
+    <WixVariable Id="WixUIBannerBmp" Value="Images\CustomBanner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="Images\CustomDialogBmp.bmp" />
+    <!-- Start of the userinterface -->
     <UI Id="CustomWixUI_InstallDir">
       <TextStyle Id="WixUI_Font_Normal" FaceName="Tahoma" Size="8" />
       <TextStyle Id="WixUI_Font_Bigger" FaceName="Tahoma" Size="12" />

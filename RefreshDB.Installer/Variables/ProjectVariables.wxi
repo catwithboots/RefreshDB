@@ -8,4 +8,6 @@
   <?endif?>
   <!-- UpgradeCode -->
   <?define UpgradeCode="4745b535-0c62-443f-8503-bfce2e7ce9db" ?>
+  <!-- Custom Setup Images-->
+
 </Include>

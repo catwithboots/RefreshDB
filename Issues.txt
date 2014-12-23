@@ -2,6 +2,8 @@ Issues:
 GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie -> Hoe waarde via url te verzenden indien spaties
 
 ToDo:
+Installer check for prerequisits (IIS)
+Installer check for already installed version
 Add version number to artifact name
 Script to copy artifacts to artifact repo
 Chef cookbook for deploying dacpacs
@@ -14,6 +16,9 @@ Make refreshdb in C# without using psremote
 
 
 Researched:
+
+Wix User Interface:
+	-> See Installer project UserInterface Folder
 
 Git Hook requires newer version of git than is available in centos yum repository:
 	-> wget https://www.kernel.org/pub/software/scm/git/git-2.2.1.tar.gz

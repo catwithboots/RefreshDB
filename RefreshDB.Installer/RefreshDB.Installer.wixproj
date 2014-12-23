@@ -42,9 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Filters\Filter.xslt" />
-    <Content Include="Images\Banner.bmp" />
     <Content Include="Images\Complete.ico" />
     <Content Include="Images\Custom.ico" />
+    <Content Include="Images\CustomBanner.bmp" />
+    <Content Include="Images\CustomDialogBmp.bmp" />
     <Content Include="Images\Dialog.bmp" />
     <Content Include="Images\Exclam.ico" />
     <Content Include="Images\Info.ico" />
