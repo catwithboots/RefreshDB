@@ -6,11 +6,9 @@
     <Property Id="APPPOOL_NAME">
       <RegistrySearch Id="WebAppPoolName" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="AppPool" Type="raw"></RegistrySearch>
     </Property>
-    <SetProperty Id="APPPOOL_NAME" Value="AppPool" After="AppSearch">APPPOOL_NAME=""</SetProperty>
     <Property Id="WEBSITE_NAME">
       <RegistrySearch Id="WebSiteName" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="WebSite" Type="raw"></RegistrySearch>
     </Property>
-    <SetProperty Id="WEBSITE_NAME" Value="WebSite" After="AppSearch">WEBSITE_NAME=""</SetProperty>
     <DirectoryRef Id="INSTALLFOLDER">
       <Component Id="RegistrySettingsWeb" Guid="A3FC5C61-5ADE-4618-819B-1D6EE40984C7" KeyPath="yes">
         <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="AppPool" Type="string" Value="[APPPOOL_NAME]"></RegistryValue>

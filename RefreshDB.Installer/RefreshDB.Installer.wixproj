@@ -21,6 +21,9 @@
     <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CustomApplicationSettingsDlg.wxs" />
+    <Compile Include="CustomInstallDirDlg.wxs" />
+    <Compile Include="CustomWixUI_InstallDir.wxs" />
     <Compile Include="IISConfiguration.wxs" />
     <Compile Include="Product.wxs" />
     <Compile Include="RefreshDB.WebAPI.Backend.wxs" />
@@ -39,13 +42,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Filter.xslt" />
+    <Content Include="InstallerFiles\Banner.bmp" />
+    <Content Include="InstallerFiles\Complete.ico" />
+    <Content Include="InstallerFiles\Custom.ico" />
+    <Content Include="InstallerFiles\Dialog.bmp" />
+    <Content Include="InstallerFiles\Exclam.ico" />
+    <Content Include="InstallerFiles\Info.ico" />
+    <Content Include="InstallerFiles\License.rtf" />
+    <Content Include="InstallerFiles\New.ico" />
+    <Content Include="InstallerFiles\Remove.ico" />
+    <Content Include="InstallerFiles\Repair.ico" />
     <Content Include="InstallerFiles\sbpdemo.ico" />
+    <Content Include="InstallerFiles\Typical.ico" />
+    <Content Include="InstallerFiles\Up.ico" />
     <Content Include="ProjectVariables.wxi" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InstallerFiles" />
+    <Folder Include="Localization" />
+    <Folder Include="Variables" />
+    <Folder Include="Parameters" />
+    <Folder Include="UserInterface" />
   </ItemGroup>
   <ItemGroup>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
     <WixExtension Include="WixUtilExtension">
       <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
       <Name>WixUtilExtension</Name>

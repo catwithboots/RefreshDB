@@ -9,7 +9,7 @@
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-    <MediaTemplate EmbedCab="yes" />
+    <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
 
     <Feature Id="ProductFeature" Title="SQL Server Database Refresh - WebAPI" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
@@ -20,10 +20,11 @@
     <Icon Id="sbpdemo.ico" SourceFile="InstallerFiles\sbpdemo.ico"/>
     <Property Id="ARPPRODUCTICON" Value="sbpdemo.ico" />
 
-    <Property Id="SQLREFRESHDBVERSION">
-      <RegistrySearch Id="VersionNumber" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VersionNumber" Type="raw"></RegistrySearch>
-    </Property>
-    <SetProperty Id="SQLREFRESHDBVERSION" Value="VersionNumber" After="AppSearch">VersionNumber=""</SetProperty>
+    <Property Id="SQLREFRESHDBVERSION" />
+
+    <!-- Include a user interface -->
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"/>
+    <UIRef Id="CustomWixUI_InstallDir" />
 
   </Product>
 

@@ -27,8 +27,14 @@
                 <Component Id="cmp8BBB80BFE1177B138AB923AFE9C83FE5" Guid="*">
                     <File Id="fil9ED4F4C5DBF14B1045954F0E614365FF" KeyPath="yes" Source="SourceDir\bin\RefreshDB.Database.Framework.dll" />
                 </Component>
+                <Component Id="cmpB486AA5FC6BDDFE17E5B304A15777293" Guid="*">
+                    <File Id="fil5762E15C6EF013016D52250871061C37" KeyPath="yes" Source="SourceDir\bin\RefreshDB.Database.Framework.pdb" />
+                </Component>
                 <Component Id="cmpC55A394D12BA411AB9880594FD1CE561" Guid="*">
                     <File Id="filAC7204F282D615606D5FC808343ED170" KeyPath="yes" Source="SourceDir\bin\RefreshDB.WebAPI.Backend.dll" />
+                </Component>
+                <Component Id="cmp6993960E54D806723F9E345856DAC164" Guid="*">
+                    <File Id="filF92189A782F9ED1C04F5BDEC99839A2B" KeyPath="yes" Source="SourceDir\bin\RefreshDB.WebAPI.Backend.pdb" />
                 </Component>
                 <Component Id="cmp32CCDC9B03F8214C5DDDD9717C0B0DCD" Guid="*">
                     <File Id="filE0FB58A4175F7308CE35641BA9BE27A2" KeyPath="yes" Source="SourceDir\bin\System.Net.Http.Formatting.dll" />
@@ -70,7 +76,9 @@
             <ComponentRef Id="cmpDE273EC5A6ABB02DB8578BC4F2ABEBD3" />
             <ComponentRef Id="cmpBE9BB87ABB7F80C07AB897C66C4BFF19" />
             <ComponentRef Id="cmp8BBB80BFE1177B138AB923AFE9C83FE5" />
+            <ComponentRef Id="cmpB486AA5FC6BDDFE17E5B304A15777293" />
             <ComponentRef Id="cmpC55A394D12BA411AB9880594FD1CE561" />
+            <ComponentRef Id="cmp6993960E54D806723F9E345856DAC164" />
             <ComponentRef Id="cmp32CCDC9B03F8214C5DDDD9717C0B0DCD" />
             <ComponentRef Id="cmp8E755731D2F4513E05B1835C366B4FD0" />
             <ComponentRef Id="cmpA4AC38BCA223E6D040AD4A04A51212F6" />

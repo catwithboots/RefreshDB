@@ -3,4 +3,14 @@
 	<String Id="ProductName">SQL Server Database Refresh - WebAPI</String>
   <String Id="ManufacturerName">Schuberg Philis</String>
   <String Id="LANG">1033</String>
+  <String Id="CustomApplicationSettingsDlg_Description">Configuration options</String>
+  <String Id="CustomApplicationSettingsDlg_Title">Configuration</String>
+  <String Id="CustomApplicationSettingsDlg_ApplicationPoolNameLabel">Enter the application pool name</String>
+  <String Id="CustomApplicationSettingsDlg_ApplicationPoolUserLabel">Enter the application pool account</String>
+  <String Id="CustomApplicationSettingsDlg_ApplicationPoolUserPasswordLabel">Enter the application pool account password</String>
+  <String Id="CustomApplicationSettingsDlg_ApplicationPoolDomainLabel">Enter the application pool account domain</String>
+  <String Id="CustomApplicationSettingsDlg_WebSiteNameLabel">Enter a name for the website</String>
+  <String Id="CustomApplicationSettingsDlg_WebSitePortLabel">Enter the portnumber for the website</String>
+  <String Id="CustomApplicationSettingsDlg_DatabaseServerLabel">Enter the instance name of SQL Server</String>
+  <String Id="CustomApplicationSettingsDlg_DatabaseNameLabel">Enter the name of the database</String>
 </WixLocalization>

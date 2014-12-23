@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  <copyright file="InstallDirDlg.wxs" company="Outercurve Foundation">
+    Copyright (c) 2004, Outercurve Foundation.
+    This software is released under Microsoft Reciprocal License (MS-RL).
+    The license and further copyright text can be found in the file
+    LICENSE.TXT at the root directory of the distribution.
+  </copyright>
+-->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <UI>
+      <Dialog Id="CustomApplicationSettingsDlg" Width="370" Height="420" Title="!(loc.InstallDirDlg_Title)">
+        <Control Id="Next" Type="PushButton" X="236" Y="400" Width="56" Height="17" Default="yes" Text="!(loc.WixUINext)" />
+        <Control Id="Back" Type="PushButton" X="180" Y="400" Width="56" Height="17" Text="!(loc.WixUIBack)" />
+        <Control Id="Cancel" Type="PushButton" X="304" Y="400" Width="56" Height="17" Cancel="yes" Text="!(loc.WixUICancel)">
+          <Publish Event="SpawnDialog" Value="CancelDlg">1</Publish>
+        </Control>
+
+        <Control Id="Description" Type="Text" X="25" Y="23" Width="280" Height="15" Transparent="yes" NoPrefix="yes" Text="!(loc.CustomApplicationSettingsDlg_Description)" />
+        <Control Id="Title" Type="Text" X="15" Y="6" Width="200" Height="15" Transparent="yes" NoPrefix="yes" Text="!(loc.ProductName) !(loc.CustomApplicationSettingsDlg_Title)" />
+        <Control Id="BannerBitmap" Type="Bitmap" X="0" Y="0" Width="370" Height="44" TabSkip="no" Text="!(loc.InstallDirDlgBannerBitmap)" />
+        <Control Id="BannerLine" Type="Line" X="0" Y="44" Width="370" Height="0" />
+        <Control Id="BottomLine" Type="Line" X="0" Y="380" Width="370" Height="0" />
+
+        <Control Id="ApplicationPoolNameLabel" Type="Text" X="20" Y="50" Width="290" Height="17" Text="!(loc.CustomApplicationSettingsDlg_ApplicationPoolNameLabel)" />
+        <Control Id="ApplicationPoolName" Type="Edit" X="20" Y="70" Width="290" Height="17" Property="APPPOOL_NAME" />
+        <Control Id="ApplicationPoolUserLabel" Type="Text" X="20" Y="90" Width="290" Height="17" Text="!(loc.CustomApplicationSettingsDlg_ApplicationPoolUserLabel)" />
+        <Control Id="ApplicationPoolUser" Type="Edit" X="20" Y="110" Width="290" Height="17" Property="APPPOOL_USER" />
+        <Control Id="ApplicationPoolUserPasswordLabel" Type="Text" X="20" Y="130" Width="290" Height="17" Text="!(loc.CustomApplicationSettingsDlg_ApplicationPoolUserPasswordLabel)" />
+        <Control Id="ApplicationPoolUserPassword" Type="Edit" X="20" Y="150" Width="290" Height="17" Property="APPPOOL_PASS" Password="yes" />
+        <Control Id="ApplicationPoolDomainLabel" Type="Text" X="20" Y="170" Width="290" Height="17" Text="!(loc.CustomApplicationSettingsDlg_ApplicationPoolDomainLabel)" />
+        <Control Id="ApplicationPoolDomain" Type="Edit" X="20" Y="190" Width="290" Height="17" Property="APPPOOL_DOMAIN" />
+        <Control Id="WebSiteNameLabel" Type="Text" X="20" Y="210" Width="290" Height="17" Text="!(loc.CustomApplicationSettingsDlg_WebSiteNameLabel)" />
+        <Control Id="WebSiteName" Type="Edit" X="20" Y="230" Width="290" Height="17" Property="WEBSITE_NAME" />
+        <Control Id="WebSitePortLabel" Type="Text" X="20" Y="250" Width="290" Height="17" Text="!(loc.CustomApplicationSettingsDlg_WebSitePortLabel)" />
+        <Control Id="WebSitePort" Type="Edit" X="20" Y="270" Width="290" Height="17" Property="WEB_PORT" />
+        <Control Id="DatabaseServerLabel" Type="Text" X="20" Y="290" Width="290" Height="17" Text="!(loc.CustomApplicationSettingsDlg_DatabaseServerLabel)" />
+        <Control Id="DatabaseServer" Type="Edit" X="20" Y="310" Width="290" Height="17" Property="DATABASESERVER" />
+        <Control Id="DatabaseNameLabel" Type="Text" X="20" Y="330" Width="290" Height="17" Text="!(loc.CustomApplicationSettingsDlg_DatabaseNameLabel)" />
+        <Control Id="DatabaseName" Type="Edit" X="20" Y="350" Width="290" Height="17" Property="DATABASENAME" />
+
+      </Dialog>
+    </UI>
+  </Fragment>
+</Wix>
