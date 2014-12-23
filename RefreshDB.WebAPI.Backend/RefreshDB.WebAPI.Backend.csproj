@@ -129,7 +129,6 @@
     <Compile Include="Models\DbQueryExecutor.cs" />
     <Compile Include="Models\Transformer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WSManHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -157,9 +156,6 @@
       <Project>{51e5e69d-87a2-4b6c-af54-4d48ca0dc37f}</Project>
       <Name>RefreshDB.Database.Framework</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="PowershellScripts\RunSQLStatement.ps1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\FileSystem.pubxml" />
