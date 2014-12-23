@@ -58,11 +58,6 @@
                     <File Id="fil8B8AC6A01AA07762601AE1B2CC62E044" KeyPath="yes" Source="SourceDir\bin\System.Web.WebPages.Razor.dll" />
                 </Component>
             </Directory>
-            <Directory Id="dirFCDD7012DDD0B8E88DD3B28DFED8D43F" Name="PowershellScripts">
-                <Component Id="cmp900148D524FFE40544D25816EE3F9745" Guid="*">
-                    <File Id="fil00A260FBEB900D386932D352E5531530" KeyPath="yes" Source="SourceDir\PowershellScripts\RunSQLStatement.ps1" />
-                </Component>
-            </Directory>
         </DirectoryRef>
     </Fragment>
     <Fragment>
@@ -85,7 +80,6 @@
             <ComponentRef Id="cmpEA09AAD207FE05D3450FEEF959A34EEA" />
             <ComponentRef Id="cmp1A8CCD05EF52550EAC9D5912926FD160" />
             <ComponentRef Id="cmp73B1845052612B620A724C3DC5A71527" />
-            <ComponentRef Id="cmp900148D524FFE40544D25816EE3F9745" />
         </ComponentGroup>
     </Fragment>
 </Wix>
