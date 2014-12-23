@@ -5,13 +5,13 @@
   <!-- Include variable wxi -->
   <?include $(sys.CURRENTDIR)ProjectVariables.wxi ?>
 
-  <Product Id="*" Name="!(loc.ProductName)" Language="!(loc.LANG)" Version="$(var.VersionNumber)" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="$(var.UpgradeCode)">
+  <Product Id="*" Name="!(loc.ProductName) v$(var.VersionNumber)" Language="!(loc.LANG)" Version="$(var.VersionNumber)" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
     <MediaTemplate EmbedCab="yes" />
 
-    <Feature Id="ProductFeature" Title="SQL Server Database Refresh - WebAPI v$(var.VersionNumber)" Level="1">
+    <Feature Id="ProductFeature" Title="SQL Server Database Refresh - WebAPI" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentGroupRef Id="RefreshDB.WebAPI.Backend_Project"/>
       <ComponentGroupRef Id="SQLRefreshDBIisConfiguration"/>
