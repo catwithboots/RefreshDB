@@ -53,7 +53,7 @@
     <Content Include="Images\New.ico" />
     <Content Include="Images\Remove.ico" />
     <Content Include="Images\Repair.ico" />
-    <Content Include="Images\sbpdemo.ico" />
+    <Content Include="Images\sbpico.ico" />
     <Content Include="Images\Typical.ico" />
     <Content Include="Images\Up.ico" />
     <Content Include="Variables\ProjectVariables.wxi" />

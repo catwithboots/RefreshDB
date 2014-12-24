@@ -17,8 +17,8 @@
       <ComponentGroupRef Id="SQLRefreshDBIisConfiguration"/>
     </Feature>
 
-    <Icon Id="sbpdemo.ico" SourceFile="Images\sbpdemo.ico"/>
-    <Property Id="ARPPRODUCTICON" Value="sbpdemo.ico" />
+    <Icon Id="sbpico.ico" SourceFile="Images\sbpico.ico"/>
+    <Property Id="ARPPRODUCTICON" Value="sbpico.ico" />
 
     <!-- Include a user interface -->
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"/>
