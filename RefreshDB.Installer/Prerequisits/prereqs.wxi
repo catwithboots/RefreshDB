@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- IIS Version 7 or higher check. -->
+  <PropertyRef Id="IISMAJORVERSION"/>
+  <Condition Message="!(loc.IISPrereq)">IISMAJORVERSION &gt;= "#7"</Condition>
+
+  <!-- .NET 4 Version Check -->
+  <PropertyRef Id="NETFRAMEWORK40FULL"/>
+  <Condition Message="!(loc.NETPrereq)">Installed OR NETFRAMEWORK40FULL</Condition>
+  
+  <!-- Already Installed Check Doet precies het omgekeerde-->
+  <Property Id="ISINSTALLED">
+    <RegistrySearch Id="SQLRefreshDB" Name="IsInstalled" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Type="raw" />
+  </Property>
+  <Condition Message="!(loc.ISInstalled)">Installed OR ISINSTALLED</Condition>
+</Include>

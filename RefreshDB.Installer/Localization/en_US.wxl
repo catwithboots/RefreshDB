@@ -13,4 +13,7 @@
   <String Id="CustomApplicationSettingsDlg_WebSitePortLabel">Enter the portnumber for the website</String>
   <String Id="CustomApplicationSettingsDlg_DatabaseServerLabel">Enter the instance name of SQL Server</String>
   <String Id="CustomApplicationSettingsDlg_DatabaseNameLabel">Enter the name of the database</String>
+  <String Id="IISPrereq">Could not find a correct version (7 or higher) of IIS</String>
+  <String Id="NETPrereq">Could not find a correct version (4 or higher) of NET Framework</String>
+  <String Id="ISInstalled">SQLRefreshDB is already installed, please uninstall first</String>
 </WixLocalization>

@@ -4,6 +4,7 @@
 
   <!-- Include variable wxi -->
   <?include $(sys.CURRENTDIR)\Variables\ProjectVariables.wxi ?>
+  
 
   <Product Id="*" Name="!(loc.ProductName)" Language="!(loc.LANG)" Version="$(var.VersionNumber)" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
@@ -24,6 +25,9 @@
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"/>
     <UIRef Id="CustomWixUI_InstallDir" />
 
+    <!-- Include the prerequisits -->
+    <?include $(sys.CURRENTDIR)\Prerequisits\prereqs.wxi ?>
+
   </Product>
 
   <Fragment>
@@ -41,6 +45,7 @@
       <Component Id="ProductComponent" Guid="B3AABA1C-4947-4776-A557-2BDA3329F9FF">
         <CreateFolder/>
         <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VersionNumber" Type="string" Value="$(var.VersionNumber)"></RegistryValue>
+        <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="IsInstalled" Type="string" Value="1"></RegistryValue>
       </Component>
       <Component Id="Web.config" Guid="CAF588D1-F1A2-405B-8860-6FC9247EDE29">
         <CreateFolder/>

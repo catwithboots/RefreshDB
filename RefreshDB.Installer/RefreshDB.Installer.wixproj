@@ -56,17 +56,23 @@
     <Content Include="Images\sbpico.ico" />
     <Content Include="Images\Typical.ico" />
     <Content Include="Images\Up.ico" />
+    <Content Include="Prerequisits\prereqs.wxi" />
     <Content Include="Variables\ProjectVariables.wxi" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Images" />
     <Folder Include="Localization" />
     <Folder Include="Filters" />
+    <Folder Include="Prerequisits" />
     <Folder Include="Variables" />
     <Folder Include="Parameters" />
     <Folder Include="UserInterface" />
   </ItemGroup>
   <ItemGroup>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
     <WixExtension Include="WixUIExtension">
       <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
       <Name>WixUIExtension</Name>
