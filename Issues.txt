@@ -2,20 +2,22 @@ Issues:
 GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie -> Hoe waarde via url te verzenden indien spaties
 
 ToDo:
-Installer check for prerequisits (IIS)
-Installer check for already installed version
 Add version number to artifact name
+Create database role for service account(s)
+Make refreshdb in C# without using psremote
+Create logging!!!!
+Create front end for administring data into sqlrefreshdb
 Script to copy artifacts to artifact repo
 Chef cookbook for deploying dacpacs
-Create database role for service account(s)
-Create front end for administring data into sqlrefreshdb
-Create logging!!!!
 Figure out stuff with debug|release
 Check wix heat with 64 bit
-Make refreshdb in C# without using psremote
+
 
 
 Researched:
+
+Wix Check if already installed (not completely satisfied, but it will do for now):
+	->  <MajorUpgrade AllowSameVersionUpgrades="yes" Disallow="yes" DisallowUpgradeErrorMessage="!(loc.ISInstalled)" AllowDowngrades="no" DowngradeErrorMessage="A version of [ProductName] is already installed." />
 
 Wix User Interface:
 	-> See Installer project UserInterface Folder

@@ -8,9 +8,9 @@
   <PropertyRef Id="NETFRAMEWORK40FULL"/>
   <Condition Message="!(loc.NETPrereq)">Installed OR NETFRAMEWORK40FULL</Condition>
   
-  <!-- Already Installed Check Doet precies het omgekeerde-->
-  <Property Id="ISINSTALLED">
-    <RegistrySearch Id="SQLRefreshDB" Name="IsInstalled" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Type="raw" />
+  <!-- Already Installed Check (Doet precies het omgekeerde)-->
+  <!--<Property Id="SQLREFRESHDB">
+    <RegistrySearch Id="SQLRefreshDB" Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="IsInstalled" Type="raw" />
   </Property>
-  <Condition Message="!(loc.ISInstalled)">Installed OR ISINSTALLED</Condition>
+  <Condition Message="!(loc.ISInstalled)">Installed</Condition>-->
 </Include>

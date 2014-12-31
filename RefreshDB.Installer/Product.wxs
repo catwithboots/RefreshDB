@@ -4,12 +4,11 @@
 
   <!-- Include variable wxi -->
   <?include $(sys.CURRENTDIR)\Variables\ProjectVariables.wxi ?>
-  
-
+ 
   <Product Id="*" Name="!(loc.ProductName)" Language="!(loc.LANG)" Version="$(var.VersionNumber)" Manufacturer="!(loc.ManufacturerName)" UpgradeCode="$(var.UpgradeCode)">
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
-    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MajorUpgrade AllowSameVersionUpgrades="yes" Disallow="yes" DisallowUpgradeErrorMessage="!(loc.ISInstalled)" AllowDowngrades="no" DowngradeErrorMessage="A version of [ProductName] is already installed." />
     <MediaTemplate EmbedCab="yes" CompressionLevel="high" />
 
     <Feature Id="ProductFeature" Title="SQL Server Database Refresh - WebAPI" Level="1">
@@ -44,8 +43,9 @@
     <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
       <Component Id="ProductComponent" Guid="B3AABA1C-4947-4776-A557-2BDA3329F9FF">
         <CreateFolder/>
+      </Component>
+      <Component Id="VersionNumberReg" Guid="E0FAF7D5-C59B-4C59-B049-72614B3C142A">
         <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="VersionNumber" Type="string" Value="$(var.VersionNumber)"></RegistryValue>
-        <RegistryValue Root="HKLM" Key="Software\[Manufacturer]\[ProductName]" Name="IsInstalled" Type="string" Value="1"></RegistryValue>
       </Component>
       <Component Id="Web.config" Guid="CAF588D1-F1A2-405B-8860-6FC9247EDE29">
         <CreateFolder/>
