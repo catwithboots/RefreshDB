@@ -12,10 +12,6 @@ namespace RefreshDB.Database.Framework
         IQueryable<Environment> GetAllEnvironments();
         Environment GetEnvironmentById(int environmentid);
 
-        // Script interfaces
-        IQueryable<Script> GetAllScripts();
-        Script GetScriptById(int id);
-
         // Instances interfaces
         IQueryable<Instance> GetAllInstances();
         Instance GetInstanceById(int id);

@@ -1,5 +1,0 @@
-﻿CREATE USER [cgenc] WITHOUT LOGIN;
-GO
-
-GRANT CONNECT TO [cgenc];
-GO

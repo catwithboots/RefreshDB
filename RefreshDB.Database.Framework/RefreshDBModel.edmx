@@ -25,15 +25,6 @@
           <Property Name="SQLPassword" Type="varchar" MaxLength="255" />
           <Property Name="environment_id" Type="int" Nullable="false" />
         </EntityType>
-        <EntityType Name="Scripts">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="host" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="Location" Type="varchar" MaxLength="255" Nullable="false" />
-        </EntityType>
         <Association Name="FK_Instances_Environments_id">
           <End Role="Environments" Type="Self.Environments" Multiplicity="1" />
           <End Role="Instances" Type="Self.Instances" Multiplicity="*" />
@@ -49,7 +40,6 @@
         <EntityContainer Name="RefreshDBModelStoreContainer">
           <EntitySet Name="Environments" EntityType="Self.Environments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Instances" EntityType="Self.Instances" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Scripts" EntityType="Self.Scripts" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Instances_Environments_id" Association="Self.FK_Instances_Environments_id">
             <End Role="Environments" EntitySet="Environments" />
             <End Role="Instances" EntitySet="Instances" />
@@ -79,15 +69,6 @@
           <Property Name="sourcesavesetpath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="destinationsavesetpath" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Script">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Nullable="false" Type="Int32" />
-          <Property Name="name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
-          <Property Name="host" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" Type="String" />
-          <Property Name="Location" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" Type="String" />
-        </EntityType>
         <Association Name="FK_Instances_Environments_id">
           <End Type="Self.Environment" Multiplicity="1" Role="Environments" />
           <End Type="Self.Instance" Multiplicity="*" Role="Instances" />
@@ -103,7 +84,6 @@
         <EntityContainer Name="RefreshDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Environments" EntityType="Self.Environment" />
           <EntitySet Name="Instances" EntityType="Self.Instance" />
-          <EntitySet Name="Scripts" EntityType="Self.Script" />
           <AssociationSet Name="FK_Instances_Environments_id" Association="Self.FK_Instances_Environments_id">
             <End EntitySet="Environments" Role="Environments" />
             <End EntitySet="Instances" Role="Instances" />
@@ -134,16 +114,6 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="environment_id" ColumnName="environment_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Scripts">
-            <EntityTypeMapping TypeName="RefreshDBModel.Script">
-              <MappingFragment StoreEntitySet="Scripts">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="host" ColumnName="host" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

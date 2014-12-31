@@ -27,6 +27,5 @@ namespace RefreshDB.Database.Framework
     
         public virtual DbSet<Environment> Environments { get; set; }
         public virtual DbSet<Instance> Instances { get; set; }
-        public virtual DbSet<Script> Scripts { get; set; }
     }
 }

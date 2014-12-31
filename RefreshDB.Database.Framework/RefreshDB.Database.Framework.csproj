@@ -67,9 +67,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RefreshDBModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Script.cs">
-      <DependentUpon>RefreshDBModel.tt</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -26,17 +26,6 @@ namespace RefreshDB.Database.Framework
             return _ctx.Environments.Find(environmentid);
         }
 
-        // Script Actions
-        public IQueryable<Script> GetAllScripts()
-        {
-            return _ctx.Scripts.AsQueryable();
-        }
-
-        public Script GetScriptById(int id)
-        {
-            return _ctx.Scripts.Find(id);
-        }
-
         // Instances Actions
         public IQueryable<Instance> GetAllInstances()
         {

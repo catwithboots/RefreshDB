@@ -2,7 +2,6 @@ Issues:
 GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie -> Hoe waarde via url te verzenden indien spaties
 
 ToDo:
-Add version number to artifact name
 Create database role for service account(s)
 Make refreshdb in C# without using psremote
 Create logging!!!!
@@ -16,9 +15,13 @@ Check wix heat with 64 bit
 
 Researched:
 
+Make changes to database and update sql project based on database:
+	-> Make changes in database
+	-> 
+
 Add version number to artifact name:
 	-> For Wix : Edit project file and add the environment variable to the outputname key SQLRefreshDB_$(SQLREFRESHDB_VERSION)
-	-> For SQL Project: 
+	-> For SQL Project: Edit project file and add the environment variable to the SqlTargetName <SqlTargetName>SQLRefreshDB_$(SQLREFRESHDB_VERSION)</SqlTargetName>
 
 Wix Check if already installed (not completely satisfied, but it will do for now):
 	->  <MajorUpgrade AllowSameVersionUpgrades="yes" Disallow="yes" DisallowUpgradeErrorMessage="!(loc.ISInstalled)" AllowDowngrades="no" DowngradeErrorMessage="A version of [ProductName] is already installed." />

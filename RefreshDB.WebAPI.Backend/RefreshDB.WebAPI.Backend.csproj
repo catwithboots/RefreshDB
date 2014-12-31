@@ -122,7 +122,6 @@
     <Compile Include="Controllers\EnvironmentsController.cs" />
     <Compile Include="Controllers\InstancesController.cs" />
     <Compile Include="Controllers\RundeckController.cs" />
-    <Compile Include="Controllers\ScriptsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

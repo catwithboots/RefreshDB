@@ -7,7 +7,6 @@
       <Diagram DiagramId="6f9c3870fbaa49859f030fd0a3e8739d" Name="Diagram1">
         <EntityTypeShape EntityType="RefreshDBModel.Environment" PointX="0.75" PointY="1.375" Width="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="RefreshDBModel.Instance" PointX="3" PointY="0.875" Width="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="RefreshDBModel.Script" PointX="0.75" PointY="4.75" Width="1.5" IsExpanded="true" />
         <AssociationConnector ManuallyRouted="false" Association="RefreshDBModel.FK_Instances_Environments_id" />
       </Diagram>
     </edmx:Diagrams>
