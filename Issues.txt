@@ -16,6 +16,10 @@ Check wix heat with 64 bit
 
 Researched:
 
+Add version number to artifact name:
+	-> For Wix : Edit project file and add the environment variable to the outputname key SQLRefreshDB_$(SQLREFRESHDB_VERSION)
+	-> For SQL Project: 
+
 Wix Check if already installed (not completely satisfied, but it will do for now):
 	->  <MajorUpgrade AllowSameVersionUpgrades="yes" Disallow="yes" DisallowUpgradeErrorMessage="!(loc.ISInstalled)" AllowDowngrades="no" DowngradeErrorMessage="A version of [ProductName] is already installed." />
 
