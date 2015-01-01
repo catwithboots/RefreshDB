@@ -2,9 +2,10 @@ Issues:
 GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie -> Hoe waarde via url te verzenden indien spaties
 
 ToDo:
-Create database role for service account(s)
-Make refreshdb in C# without using psremote
 Create logging!!!!
+Make refreshdb in C# without using psremote
+Unit Testing
+Functional testing
 Create front end for administring data into sqlrefreshdb
 Script to copy artifacts to artifact repo
 Chef cookbook for deploying dacpacs
@@ -17,7 +18,8 @@ Researched:
 
 Make changes to database and update sql project based on database:
 	-> Make changes in database
-	-> 
+	-> Update EF diagram from database / If it does not work then change the diagram manually
+	-> Do another update EF from database
 
 Add version number to artifact name:
 	-> For Wix : Edit project file and add the environment variable to the outputname key SQLRefreshDB_$(SQLREFRESHDB_VERSION)

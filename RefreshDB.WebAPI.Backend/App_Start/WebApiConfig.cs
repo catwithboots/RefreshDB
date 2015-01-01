@@ -16,12 +16,6 @@ namespace RefreshDB.WebAPI.Backend
             );
 
             config.Routes.MapHttpRoute(
-                name: "Scripts",
-                routeTemplate: "api/scripts/{id}",
-                defaults: new { controller = "scripts", id = RouteParameter.Optional }
-            );
-
-            config.Routes.MapHttpRoute(
                 name: "Instances",
                 routeTemplate: "api/instances/{id}",
                 defaults: new { controller = "instances", id = RouteParameter.Optional }
