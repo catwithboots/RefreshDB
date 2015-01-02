@@ -3,8 +3,8 @@ GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals 
 
 ToDo:
 Create logging!!!!
-Make refreshdb in C# without using psremote
 Unit Testing
+Make refreshdb in C# without using psremote
 Functional testing
 Create front end for administring data into sqlrefreshdb
 Script to copy artifacts to artifact repo

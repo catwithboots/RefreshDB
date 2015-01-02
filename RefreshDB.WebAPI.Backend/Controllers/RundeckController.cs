@@ -42,6 +42,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         // Return instances for an environment
         public dynamic GetInstanceByEnvId(int id)
         {
+            logger.Info("Getting instances for environmentid {0}", id.ToString());
             dynamic inst = new InstancesController();
             {
                 List<Instance> list = inst.GetInstanceByEnvironmentId(id);
@@ -59,6 +60,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         // Return explicitely the instance name because rundeck can only pass option values to the workflow
         public dynamic GetInstanceNameByInstance(int id)
         {
+            logger.Info("Getting instancesname for instanceid {0}", id.ToString());
             dynamic inst = new InstancesController();
             {
                 Instance myinstance = inst.GetInstanceById(id);
@@ -80,6 +82,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         // Return server for an instance
         public dynamic GetServerByInstance(int id)
         {
+            logger.Info("Getting servername for instanceid {0}", id.ToString());
             dynamic inst = new InstancesController();
             {
                 Instance myinstance = inst.GetInstanceById(id);
@@ -98,9 +101,10 @@ namespace RefreshDB.WebAPI.Backend.Controllers
             }
         }
 
-        // Return instances for an environment
+        // Return databases for an instance
         public dynamic GetDatabasesByInstance(int id)
         {
+            logger.Info("Getting databasename for instanceid {0}", id.ToString());
             dynamic dbs = new DatabasesController();
             {
                 List<string> list = dbs.GetDbsByInstance(id);
@@ -118,6 +122,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         // Return source savesetfile for a database
         public dynamic GetSourceSavesetPathByInstance(int id, string name)
         {
+            logger.Info("Getting source savesetfile for instanceid {0} and database {1}", id.ToString(), name);
             dynamic inst = new InstancesController();
             {
                 Instance myinstance = inst.GetInstanceById(id);
@@ -142,6 +147,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         // Return destination saveset path for the backup
         public dynamic GetDestinationSavesetPathByInstance(int id)
         {
+            logger.Info("Getting destination saveset for instanceid {0}", id.ToString());
             dynamic inst = new InstancesController();
             {
                 Instance myinstance = inst.GetInstanceById(id);
@@ -163,6 +169,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
         // Return True/False because it's a hassle in rundeck to do name/value pairs
         public dynamic GetBoolean()
         {
+            logger.Info("Getting booleans");
             string strJSON = "[{\"name\":\"True\", \"value\":\"1\"}, {\"name\":\"False\", \"value\":\"0\"}]";
             JArray rows = JArray.Parse(strJSON);
             return Json(rows);
@@ -170,6 +177,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
 
         public HttpResponseMessage GetOops()
         {
+            logger.Info("Getting an oopsie");
             logger.Info("Getting an oopsie");
             throw new Exception("Ooopsie!");
         }

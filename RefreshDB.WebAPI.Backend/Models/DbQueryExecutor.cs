@@ -5,15 +5,20 @@ using System.Web;
 using System.Data.SqlClient;
 using RefreshDB.Database.Framework;
 using RefreshDB.WebAPI.Backend.Controllers;
+using NLog;
 
 
 namespace RefreshDB.WebAPI.Backend.Models
 {
     public class DbQueryExecutor
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         public List<string> MsSqlExecQuery(string instance, string database, string query)
         {
             string constring = "Server = " + instance + "; Database = " + database + "; Integrated Security = true; Application Name = .NET SQLClient Data Provider - RefreshDB Deployment";
+
+            logger.Info("Using connection string {0}", constring);
 
             List<string> dbresults = new List<string>();
 
@@ -23,6 +28,8 @@ namespace RefreshDB.WebAPI.Backend.Models
                 {
                     cmd.Connection = con;
                     cmd.CommandText = query;
+
+                    logger.Info("Connect and run {0}", query);
 
                     try
                     {
