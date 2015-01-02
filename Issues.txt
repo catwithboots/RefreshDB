@@ -2,7 +2,6 @@
 GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie -> Hoe waarde via url te verzenden indien spaties
 
 ToDo:
-Create logging!!!!
 Unit Testing
 Make refreshdb in C# without using psremote
 Functional testing
@@ -11,7 +10,6 @@ Script to copy artifacts to artifact repo
 Chef cookbook for deploying dacpacs
 Figure out stuff with debug|release
 Check wix heat with 64 bit
-
 
 
 Researched:
