@@ -11,14 +11,20 @@ using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.IO;
 using RefreshDB.WebAPI.Backend.Models;
+using RefreshDB.ExceptionHandler;
+using NLog;
 
 namespace RefreshDB.WebAPI.Backend.Controllers
 {
+
     public class RundeckController : ApiController
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         // Return all environments
         public dynamic Get()
         {
+            logger.Info("Getting All environments");
             dynamic env = new EnvironmentsController();
             {
                 List<RefreshDB.Database.Framework.Environment> list = env.Get();
@@ -160,6 +166,12 @@ namespace RefreshDB.WebAPI.Backend.Controllers
             string strJSON = "[{\"name\":\"True\", \"value\":\"1\"}, {\"name\":\"False\", \"value\":\"0\"}]";
             JArray rows = JArray.Parse(strJSON);
             return Json(rows);
+        }
+
+        public HttpResponseMessage GetOops()
+        {
+            logger.Info("Getting an oopsie");
+            throw new Exception("Ooopsie!");
         }
     }
 }

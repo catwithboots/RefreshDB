@@ -41,7 +41,7 @@ namespace RefreshDB.WebAPI.Backend.Models
                     catch (Exception e)
                     {
 
-                        throw;
+                        throw (e);
                     }
                 }
             }

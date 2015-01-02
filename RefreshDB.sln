@@ -30,6 +30,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.RefreshDB.Installer", "5.
 EndProject
 Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "RefreshDB.Installer", "RefreshDB.Installer\RefreshDB.Installer.wixproj", "{7A818DA8-5765-4CF5-82CF-C3C425925B2A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10.RefreshDB.ExceptionHandler", "10.RefreshDB.ExceptionHandler", "{EE82F380-CED4-41D6-996E-27E3DE2DD658}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefreshDB.ExceptionHandler", "RefreshDB.ExceptionHandler\RefreshDB.ExceptionHandler.csproj", "{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -84,6 +88,16 @@ Global
 		{7A818DA8-5765-4CF5-82CF-C3C425925B2A}.Release|Mixed Platforms.Build.0 = Release|x86
 		{7A818DA8-5765-4CF5-82CF-C3C425925B2A}.Release|x86.ActiveCfg = Release|x86
 		{7A818DA8-5765-4CF5-82CF-C3C425925B2A}.Release|x86.Build.0 = Release|x86
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +107,6 @@ Global
 		{51E5E69D-87A2-4B6C-AF54-4D48CA0DC37F} = {05F01498-8573-4C53-90FB-D539DE79FEA4}
 		{51FA62C0-76E8-406E-A7B0-40CC9C0204C2} = {185E4753-CF6C-4FFE-9A02-7F43174FD6D3}
 		{7A818DA8-5765-4CF5-82CF-C3C425925B2A} = {0E9C5971-EF76-4BA9-A294-2118DD318E41}
+		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F} = {EE82F380-CED4-41D6-996E-27E3DE2DD658}
 	EndGlobalSection
 EndGlobal

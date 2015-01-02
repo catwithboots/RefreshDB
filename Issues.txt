@@ -1,4 +1,4 @@
-Issues:
+﻿Issues:
 GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals een spatie -> Hoe waarde via url te verzenden indien spaties
 
 ToDo:
@@ -15,6 +15,42 @@ Check wix heat with 64 bit
 
 
 Researched:
+
+Logging:
+	-> Create new project (class library) inside solution for logging
+	-> Install nlog nuget package in project
+	-> Create one NlogExceptionLogger class:
+		using System;
+		﻿using System.Net.Http;
+		using System.Text;
+		using System.Web.Http.ExceptionHandling;
+		using NLog;
+
+		namespace RefreshDB.ExceptionHandler
+		{
+			public class NLogExceptionLogger : ExceptionLogger
+			{
+				private static readonly Logger Nlog = LogManager.GetCurrentClassLogger();
+				public override void Log(ExceptionLoggerContext context)
+				{
+					Nlog.LogException(LogLevel.Error, RequestToString(context.Request), context.Exception);
+				}
+
+				private static string RequestToString(HttpRequestMessage request)
+				{
+					var message = new StringBuilder();
+					if (request.Method != null)
+						message.Append(request.Method);
+
+					if (request.RequestUri != null)
+						message.Append(" ").Append(request.RequestUri);
+
+					return message.ToString();
+				}
+			}
+		}
+	-> Add reference to this class from other projects in solution
+	-> now you can use the solution wide exception logger for all projects in solution
 
 Make changes to database and update sql project based on database:
 	-> Make changes in database

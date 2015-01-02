@@ -24,11 +24,20 @@
                 <Component Id="cmpBE9BB87ABB7F80C07AB897C66C4BFF19" Guid="*">
                     <File Id="fil7AB5AC371ADF176E37A0069DBDC4AC3A" KeyPath="yes" Source="SourceDir\bin\Newtonsoft.Json.dll" />
                 </Component>
+                <Component Id="cmp58B9C95955B44D734FFD043C83D592DE" Guid="*">
+                    <File Id="fil72CF290B325BD51A2179BAA8268CA4A5" KeyPath="yes" Source="SourceDir\bin\NLog.dll" />
+                </Component>
                 <Component Id="cmp8BBB80BFE1177B138AB923AFE9C83FE5" Guid="*">
                     <File Id="fil9ED4F4C5DBF14B1045954F0E614365FF" KeyPath="yes" Source="SourceDir\bin\RefreshDB.Database.Framework.dll" />
                 </Component>
                 <Component Id="cmpB486AA5FC6BDDFE17E5B304A15777293" Guid="*">
                     <File Id="fil5762E15C6EF013016D52250871061C37" KeyPath="yes" Source="SourceDir\bin\RefreshDB.Database.Framework.pdb" />
+                </Component>
+                <Component Id="cmpC48E973319B07407AC0A107B7D701BA6" Guid="*">
+                    <File Id="filFDA8F0BE31D6A5B7302DD6B804B98D27" KeyPath="yes" Source="SourceDir\bin\RefreshDB.ExceptionHandler.dll" />
+                </Component>
+                <Component Id="cmpDDE74BA02B68B011BF6933A632E7E38F" Guid="*">
+                    <File Id="fil20C5A4D54223790126AA10FEB59DECC6" KeyPath="yes" Source="SourceDir\bin\RefreshDB.ExceptionHandler.pdb" />
                 </Component>
                 <Component Id="cmpC55A394D12BA411AB9880594FD1CE561" Guid="*">
                     <File Id="filAC7204F282D615606D5FC808343ED170" KeyPath="yes" Source="SourceDir\bin\RefreshDB.WebAPI.Backend.dll" />
@@ -75,8 +84,11 @@
             <ComponentRef Id="cmp7FAFACC5767528A7C01CB444DDF11157" />
             <ComponentRef Id="cmpDE273EC5A6ABB02DB8578BC4F2ABEBD3" />
             <ComponentRef Id="cmpBE9BB87ABB7F80C07AB897C66C4BFF19" />
+            <ComponentRef Id="cmp58B9C95955B44D734FFD043C83D592DE" />
             <ComponentRef Id="cmp8BBB80BFE1177B138AB923AFE9C83FE5" />
             <ComponentRef Id="cmpB486AA5FC6BDDFE17E5B304A15777293" />
+            <ComponentRef Id="cmpC48E973319B07407AC0A107B7D701BA6" />
+            <ComponentRef Id="cmpDDE74BA02B68B011BF6933A632E7E38F" />
             <ComponentRef Id="cmpC55A394D12BA411AB9880594FD1CE561" />
             <ComponentRef Id="cmp6993960E54D806723F9E345856DAC164" />
             <ComponentRef Id="cmp32CCDC9B03F8214C5DDDD9717C0B0DCD" />

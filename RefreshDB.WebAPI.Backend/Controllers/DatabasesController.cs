@@ -28,7 +28,7 @@ namespace RefreshDB.WebAPI.Backend.Controllers
             List<string> results = new List<string>();
             string servername = instobj.name.ToString();
             string catalog = "master";
-            string dbnames = "select name from sys.databases where database_id > 4 and name not in ('SBPTools')";
+            string dbnames = "select name from sys.databases where database_id > 4";
 
             var dbobject = new DbQueryExecutor();
 

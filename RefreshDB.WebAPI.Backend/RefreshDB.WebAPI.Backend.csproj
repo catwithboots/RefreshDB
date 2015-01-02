@@ -50,6 +50,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NLog, Version=3.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NLog.3.1.0.0\lib\net45\NLog.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -154,6 +158,10 @@
     <ProjectReference Include="..\RefreshDB.Database.Framework\RefreshDB.Database.Framework.csproj">
       <Project>{51e5e69d-87a2-4b6c-af54-4d48ca0dc37f}</Project>
       <Name>RefreshDB.Database.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RefreshDB.ExceptionHandler\RefreshDB.ExceptionHandler.csproj">
+      <Project>{ec0b62a9-adb0-4f73-b6d3-3be019b1a08f}</Project>
+      <Name>RefreshDB.ExceptionHandler</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

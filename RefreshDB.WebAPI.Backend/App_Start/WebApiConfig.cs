@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using RefreshDB.ExceptionHandler;
+using System.Web.Http.ExceptionHandling;
 
 namespace RefreshDB.WebAPI.Backend
 {
@@ -53,7 +55,14 @@ namespace RefreshDB.WebAPI.Backend
                constraints: new { id = @"^[0-9]+$" }
             );
 
+            config.Routes.MapHttpRoute(
+                name: "GenerateError",
+                routeTemplate: "api/rundeck/GetOops",
+                defaults: new { controller = "rundeck", action = "GetOops" }
+            );
             // End Rundeck routes
+
+            config.Services.Add(typeof(IExceptionLogger), new NLogExceptionLogger());
         }
     }
 }
