@@ -34,9 +34,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.RefreshDB.ExceptionHandle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefreshDB.ExceptionHandler", "RefreshDB.ExceptionHandler\RefreshDB.ExceptionHandler.csproj", "{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.RefreshDB.UnitTest", "7.RefreshDB.UnitTest", "{160CB9BF-0C4B-4633-846E-1A59F25BC8AC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.RefreshDB.UnitTest", "7.RefreshDB.UnitTest", "{ABAE1566-911C-4ECA-BAC5-5F2F99529F41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefreshDB.UnitTest", "RefreshDB.UnitTest\RefreshDB.UnitTest.csproj", "{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefreshDB.UnitTest", "RefreshDB.UnitTest\RefreshDB.UnitTest.csproj", "{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7CEB215D-D43C-46A1-B079-6B959C39CA66}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,16 +107,16 @@ Global
 		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F}.Release|x86.ActiveCfg = Release|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B}.Release|x86.ActiveCfg = Release|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -122,6 +127,6 @@ Global
 		{51FA62C0-76E8-406E-A7B0-40CC9C0204C2} = {185E4753-CF6C-4FFE-9A02-7F43174FD6D3}
 		{7A818DA8-5765-4CF5-82CF-C3C425925B2A} = {0E9C5971-EF76-4BA9-A294-2118DD318E41}
 		{EC0B62A9-ADB0-4F73-B6D3-3BE019B1A08F} = {EE82F380-CED4-41D6-996E-27E3DE2DD658}
-		{0CC7F972-13B8-4ADF-A75B-AAD2AC62DF8B} = {160CB9BF-0C4B-4633-846E-1A59F25BC8AC}
+		{D4ACDE3E-AC12-44F2-9BFE-08303A5A2E4B} = {ABAE1566-911C-4ECA-BAC5-5F2F99529F41}
 	EndGlobalSection
 EndGlobal

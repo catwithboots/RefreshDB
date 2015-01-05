@@ -49,6 +49,7 @@ Logging:
 		}
 	-> Add reference to this class from other projects in solution
 	-> now you can use the solution wide exception logger for all projects in solution
+	-> Standard logging is still per class
 
 Make changes to database and update sql project based on database:
 	-> Make changes in database
