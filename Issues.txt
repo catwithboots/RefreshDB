@@ -4,10 +4,10 @@ GetSourceSavesetPathByInstance werkt niet met db's met speciale karakters zoals 
 ToDo:
 Unit Testing
 Make refreshdb in C# without using psremote
-Functional testing
 Create front end for administring data into sqlrefreshdb
 Script to copy artifacts to artifact repo
 Chef cookbook for deploying dacpacs
+Functional testing
 Figure out stuff with debug|release
 Check wix heat with 64 bit
 
