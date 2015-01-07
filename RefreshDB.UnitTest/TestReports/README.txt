@@ -1,0 +1,1 @@
+﻿When building via Jenkins, the xUnit test report will be placed in this folder
